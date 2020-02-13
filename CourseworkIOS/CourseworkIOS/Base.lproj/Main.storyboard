@@ -163,36 +163,12 @@
                         <outlet property="lblError" destination="ukc-lB-bqH" id="9rI-BC-Ong"/>
                         <outlet property="txtEmail" destination="H7A-4T-Yfv" id="ym9-DV-fV0"/>
                         <outlet property="txtPassword" destination="Ct8-1U-VwE" id="5pJ-48-o2p"/>
+                        <segue destination="wKX-d3-9H3" kind="presentation" identifier="HomeVC" id="Lks-MC-xuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYL-G7-sgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="645" y="-234"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="IZa-Lg-vxm">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nfz-MI-KwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="HomeVC" id="MIc-J0-Bcq" customClass="HomeViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DXR-bb-biu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-DZ-dLv">
-                                <rect key="frame" x="184" y="258" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="wKX-d3-9H3" kind="show" id="A4s-dZ-o6T"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7YM-BG-AuR"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1441" y="122"/>
         </scene>
         <!--Upload-->
         <scene sceneID="QW5-Kk-7Ql">
@@ -398,6 +374,7 @@
                         <outlet property="txtFname" destination="l2Z-5u-nDd" id="0IJ-xk-xGA"/>
                         <outlet property="txtLname" destination="sv1-Lj-su8" id="8f7-Og-x4W"/>
                         <outlet property="txtPassword" destination="HKn-mp-Vzh" id="UfD-LI-N0x"/>
+                        <segue destination="wKX-d3-9H3" kind="presentation" identifier="HomeVC" id="5zv-I3-XLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jd-AH-72V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,6 +391,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zxy-5B-8uc"/>
+        <segue reference="5zv-I3-XLI"/>
         <segue reference="CPP-IV-WXc"/>
     </inferredMetricsTieBreakers>
 </document>

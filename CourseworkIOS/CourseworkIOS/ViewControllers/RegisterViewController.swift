@@ -129,14 +129,18 @@ class RegisterViewController: UIViewController {
     }
     func transitionToHome(){
         
-        let homeViewController =  storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+//        let homeViewController =  storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+//
+//        view.window?.rootViewController = homeViewController
+//        view.window?.makeKeyAndVisible()
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-        
+        self.performSegue(withIdentifier: "HomeVC", sender: nil)
     }
     
     func uploadProfilePic(){
+        
+        profileImage.layer.cornerRadius = 10
+        profileImage.clipsToBounds = true
         
         let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGuesture)

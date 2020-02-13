@@ -42,10 +42,12 @@ class LoginViewController: UIViewController {
                 self.lblError.alpha  = 1
             }
             else{
-                let homeViewController =  self.storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+//                let homeViewController =  self.storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+//
+//                self.view.window?.rootViewController = homeViewController
+//                self.view.window?.makeKeyAndVisible()
                 
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                self.performSegue(withIdentifier: "HomeVC", sender: nil)
             }
         }
     }

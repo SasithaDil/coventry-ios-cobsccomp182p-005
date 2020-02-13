@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */; };
 		610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */; };
-		610FAA3323F4009E00E9EA4B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3223F4009E00E9EA4B /* Constants.swift */; };
 		610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3423F4013100E9EA4B /* HomeViewController.swift */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
 		61D798B623F26390007C997D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B523F26390007C997D /* LoginViewController.swift */; };
@@ -41,7 +40,6 @@
 		3928E29A4588283A3E1BE120 /* Pods-CourseworkIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CourseworkIOSTests/Pods-CourseworkIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		610FAA3223F4009E00E9EA4B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		610FAA3423F4013100E9EA4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				61ECF85B23EBEE4800E9992E /* LaunchScreen.storyboard */,
 				61ECF85E23EBEE4800E9992E /* Info.plist */,
 				61ECF85623EBEE4700E9992E /* CourseworkIOS.xcdatamodeld */,
-				610FAA3223F4009E00E9EA4B /* Constants.swift */,
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
 			);
 			path = CourseworkIOS;
@@ -348,7 +345,6 @@
 				61D798B823F28667007C997D /* Extensions.swift in Sources */,
 				610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */,
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,
-				610FAA3323F4009E00E9EA4B /* Constants.swift in Sources */,
 				61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,

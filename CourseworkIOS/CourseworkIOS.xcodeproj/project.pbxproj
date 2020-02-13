@@ -21,6 +21,8 @@
 		61ECF85A23EBEE4800E9992E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61ECF85923EBEE4800E9992E /* Assets.xcassets */; };
 		61ECF85D23EBEE4800E9992E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61ECF85B23EBEE4800E9992E /* LaunchScreen.storyboard */; };
 		61ECF86823EBEE4800E9992E /* CourseworkIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECF86723EBEE4800E9992E /* CourseworkIOSTests.swift */; };
+		61FDC5D823F52C2C00C701C7 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDC5D723F52C2C00C701C7 /* UploadViewController.swift */; };
+		61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FDC5D923F52C6B00C701C7 /* ProfileViewController.swift */; };
 		D5AE4CAE10896E94F4FF279A /* Pods_CourseworkIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F1821561AAB443593CCC4F /* Pods_CourseworkIOSTests.framework */; };
 		E44A3D80FC3F7962BE91F312 /* Pods_CourseworkIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D561F57BBC2F1885AD77CFB2 /* Pods_CourseworkIOS.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		61ECF86323EBEE4800E9992E /* CourseworkIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseworkIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61ECF86723EBEE4800E9992E /* CourseworkIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkIOSTests.swift; sourceTree = "<group>"; };
 		61ECF86923EBEE4800E9992E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61FDC5D723F52C2C00C701C7 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		61FDC5D923F52C6B00C701C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		72C93CACFBBBB9468C16A4B7 /* Pods-CourseworkIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOSTests.release.xcconfig"; path = "Target Support Files/Pods-CourseworkIOSTests/Pods-CourseworkIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A32EE3CD1AF896E81E5D32DE /* Pods-CourseworkIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOS.release.xcconfig"; path = "Target Support Files/Pods-CourseworkIOS/Pods-CourseworkIOS.release.xcconfig"; sourceTree = "<group>"; };
 		C7A4FB0DAFEBC6CB8393CD08 /* Pods-CourseworkIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOS.debug.xcconfig"; path = "Target Support Files/Pods-CourseworkIOS/Pods-CourseworkIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				61D798B523F26390007C997D /* LoginViewController.swift */,
 				610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */,
 				61ECF85123EBEE4700E9992E /* ViewController.swift */,
+				61FDC5D723F52C2C00C701C7 /* UploadViewController.swift */,
+				61FDC5D923F52C6B00C701C7 /* ProfileViewController.swift */,
 				610FAA3423F4013100E9EA4B /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -125,9 +131,9 @@
 		61ECF84E23EBEE4700E9992E /* CourseworkIOS */ = {
 			isa = PBXGroup;
 			children = (
-				610FAA3623F4119600E9EA4B /* ViewControllers */,
-				617EFD1923EC20260063C2D4 /* Designs */,
 				61ECF84F23EBEE4700E9992E /* AppDelegate.swift */,
+				617EFD1923EC20260063C2D4 /* Designs */,
+				610FAA3623F4119600E9EA4B /* ViewControllers */,
 				61ECF85323EBEE4700E9992E /* Main.storyboard */,
 				61ECF85923EBEE4800E9992E /* Assets.xcassets */,
 				61ECF85B23EBEE4800E9992E /* LaunchScreen.storyboard */,
@@ -338,10 +344,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				61ECF85223EBEE4700E9992E /* ViewController.swift in Sources */,
+				61FDC5D823F52C2C00C701C7 /* UploadViewController.swift in Sources */,
 				61D798B823F28667007C997D /* Extensions.swift in Sources */,
 				610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */,
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,
 				610FAA3323F4009E00E9EA4B /* Constants.swift in Sources */,
+				61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,
 				61D798B623F26390007C997D /* LoginViewController.swift in Sources */,

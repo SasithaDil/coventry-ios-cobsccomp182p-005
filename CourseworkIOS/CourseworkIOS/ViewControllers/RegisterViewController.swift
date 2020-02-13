@@ -10,11 +10,12 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
-
+import FirebaseStorage
 
 class RegisterViewController: UIViewController {
 
     
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var lblError: UILabel!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var txtConfirmPassword: UITextField!
@@ -24,10 +25,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtLname: UITextField!
     @IBOutlet weak var txtFname: UITextField!
     
+    var selectedImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpElements()
+        uploadProfilePic()
     }
     func setUpElements(){
         lblError.alpha = 0
@@ -77,13 +81,32 @@ class RegisterViewController: UIViewController {
             let contact = txtContact.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = txtPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+           
+            
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+                
                 
                 if err != nil{
                     self.showError("Error creating user.")
                 }
                 else{
                     let db = Firestore.firestore()
+                    
+                    let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com/profilePics").child("profile_image").child(result!.user.uid)
+                    if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
+                        storageRef.putData(imageData, metadata: nil, completion: { (metadata, error ) in
+                            if error != nil{
+                                self.showError("Error in uploading profile photo.")
+                            }
+//                            let profileImgURL = metadata?.size
+//                            storageRef.downloadURL(completion: { (profileImgURL, err) in
+//                                guard profileImgURL != nil else{
+//                                    return
+//                                }
+//                            })
+                            
+                        })
+                    }
                     
                     db.collection("users").addDocument(data: ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "uid":  result!.user.uid]) { (error) in
                         
@@ -112,5 +135,30 @@ class RegisterViewController: UIViewController {
         view.window?.makeKeyAndVisible()
         
     }
+    
+    func uploadProfilePic(){
+        
+        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.handleSelectProfileImageView))
+        profileImage.addGestureRecognizer(tapGuesture)
+        profileImage.isUserInteractionEnabled = true
+    }
+    @objc func handleSelectProfileImageView(){
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+    }
+    
+}
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+       if let image = info[.originalImage] as? UIImage {
+            selectedImage = image
+           profileImage.image = image
+        }
+        print(info)
 
+        dismiss(animated: true, completion: nil)
+    }
 }

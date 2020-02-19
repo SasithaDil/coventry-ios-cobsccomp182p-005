@@ -29,9 +29,12 @@ class LoginViewController: UIViewController {
         Utilities.textFieldStyles(txtPassword)
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     @IBAction func LOgin(_ sender: Any) {
-        
+        view.endEditing(true)
       //  let email = txtEmail.text!.trimmingCharacters(in: .whitespacesAndNewlines)
        // let password = txtPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         

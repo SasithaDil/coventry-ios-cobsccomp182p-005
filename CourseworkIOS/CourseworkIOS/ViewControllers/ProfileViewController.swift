@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupElements()
 
-        // Do any additional setup after loading the view.
+    }
+    func setupElements(){
+         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
     
-
+    @IBAction func Logout(_ sender: Any) {
+        
+                try! Auth.auth().signOut()
+                if let storyboard = self.storyboard {
+                    let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+                    self.present(vc, animated: false, completion: nil)
+                }
+        
+        }
+    
 
 }

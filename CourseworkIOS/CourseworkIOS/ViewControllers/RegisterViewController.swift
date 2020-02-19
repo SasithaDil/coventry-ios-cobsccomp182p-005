@@ -45,6 +45,9 @@ class RegisterViewController: UIViewController {
         Utilities.buttonStyles(btnRegister)
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     func validateFields() -> String?{
         
@@ -69,6 +72,7 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func Register(_ sender: Any) {
+        view.endEditing(true)
         let error = validateFields()
         if error != nil {
             showError(error!)
@@ -129,7 +133,7 @@ class RegisterViewController: UIViewController {
     }
     func transitionToHome(){
         
-//        let homeViewController =  storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
+//        let homeViewController =  storyboard?.instantiateViewController(withIdentifier:                Constants.StoryBoard.homeViewController) as? HomeViewController
 //
 //        view.window?.rootViewController = homeViewController
 //        view.window?.makeKeyAndVisible()

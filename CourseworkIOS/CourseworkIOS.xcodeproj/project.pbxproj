@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610A01F023FD44BE00307500 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A01EF23FD44BE00307500 /* Post.swift */; };
 		610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */; };
 		610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */; };
 		610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3423F4013100E9EA4B /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		3928E29A4588283A3E1BE120 /* Pods-CourseworkIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CourseworkIOSTests/Pods-CourseworkIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		610A01EF23FD44BE00307500 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		610FAA3423F4013100E9EA4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610A01EE23FD444B00307500 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				610A01EF23FD44BE00307500 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		610FAA3623F4119600E9EA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 			children = (
 				61ECF84F23EBEE4700E9992E /* AppDelegate.swift */,
 				617EFD1923EC20260063C2D4 /* Designs */,
+				610A01EE23FD444B00307500 /* Models */,
 				610FAA3623F4119600E9EA4B /* ViewControllers */,
 				61ECF85323EBEE4700E9992E /* Main.storyboard */,
 				61ECF85923EBEE4800E9992E /* Assets.xcassets */,
@@ -346,6 +357,7 @@
 				611788C623F65A5000C4A441 /* EventsViewController.swift in Sources */,
 				61ECF85223EBEE4700E9992E /* ViewController.swift in Sources */,
 				61FDC5D823F52C2C00C701C7 /* UploadViewController.swift in Sources */,
+				610A01F023FD44BE00307500 /* Post.swift in Sources */,
 				61D798B823F28667007C997D /* Extensions.swift in Sources */,
 				610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */,
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,

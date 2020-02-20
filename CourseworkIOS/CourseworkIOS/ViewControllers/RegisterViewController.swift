@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
 
@@ -87,43 +88,52 @@ class RegisterViewController: UIViewController {
             
            
             
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                
+//            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            
+            Auth.auth().createUser(withEmail: email, password: password) { ( User, err) in
                 
                 if err != nil{
                     self.showError("Error creating user.")
                 }
                 else{
-                    let db = Firestore.firestore()
+                    //                    let db = Firestore.firestore()
                     
-                    let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com/profilePics").child("profile_image").child(result!.user.uid)
+                    let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com/profilePics").child("profile_image").child(User!.user.uid).child("\(NSUUID().uuidString).jpg")
                     if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
                         storageRef.putData(imageData, metadata: nil, completion: { (metadata, error ) in
                             if error != nil{
                                 self.showError("Error in uploading profile photo.")
                             }
-//                            let profileImgURL = metadata?.size
-//                            storageRef.downloadURL(completion: { (profileImgURL, err) in
-//                                guard profileImgURL != nil else{
-//                                    return
-//                                }
-//                            })
                             
-                        })
-                    }
-                    
-                    db.collection("users").addDocument(data: ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "uid":  result!.user.uid]) { (error) in
-                        
-                        if  error != nil{
-                            self.showError("Error saving user data")
+                            let ref = Database.database().reference()
+                            
+                            
+                            storageRef.downloadURL(completion: {(url, error) in
+                                if error != nil {
+                                    print(error!.localizedDescription)
+                                    return
+                                }
+                                let pic = url?.absoluteString
+                                
+                                
+                                
+                                let userdata = ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "ProfilePicURL": pic ]
+                                
+                                ref.child("User").childByAutoId().setValue(userdata)
+                                
+                            })
                         }
-                    }
+                        )}
+                
+            }
+            
+         
                     self.transitionToHome()
                     
                 }
             }
         }
-    }
+    
     
     
     func showError(_ message:String){
@@ -133,10 +143,7 @@ class RegisterViewController: UIViewController {
     }
     func transitionToHome(){
         
-//        let homeViewController =  storyboard?.instantiateViewController(withIdentifier:                Constants.StoryBoard.homeViewController) as? HomeViewController
-//
-//        view.window?.rootViewController = homeViewController
-//        view.window?.makeKeyAndVisible()
+
         
         self.performSegue(withIdentifier: "HomeVC", sender: nil)
     }
@@ -161,12 +168,12 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-       if let image = info[.originalImage] as? UIImage {
+        if let image = info[.originalImage] as? UIImage {
             selectedImage = image
-           profileImage.image = image
+            profileImage.image = image
         }
         print(info)
-
+        
         dismiss(animated: true, completion: nil)
     }
 }

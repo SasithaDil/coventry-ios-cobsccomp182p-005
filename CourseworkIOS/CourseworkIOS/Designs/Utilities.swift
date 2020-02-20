@@ -26,7 +26,6 @@ class Utilities {
         textfield.layer.cornerRadius = 10
         textfield.tintColor = UIColor.gray
         
-       
         
     }
     

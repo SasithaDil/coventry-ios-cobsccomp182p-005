@@ -61,29 +61,40 @@ class UploadViewController: UIViewController {
     
     @IBAction func Share(_ sender: Any) {
         if let postImg = self.selectedImage, let imageData = postImg.jpegData(compressionQuality: 0.1){
-            let photoID = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com").child("Posts").child(photoID)
+            let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com").child("Posts").child("\(NSUUID().uuidString).jpg")
             storageRef.putData(imageData, metadata: nil, completion: { (metadata, error ) in
                 if error != nil{
                     return
                 }
+                
+              
+                
                 let ref = Database.database().reference()
                 let postRef = ref.child("Posts")
                 let newPostId = postRef.childByAutoId().key
                 let user = Auth.auth().currentUser
 //                let newPostRef = postRef.child(newPostId!)
-                let db = Firestore.firestore()
+//                let db = Firestore.firestore()
+//                let pic = "gs://coursework-ios-730cb.appspot.com/Posts/"+photoID
+//                let imageUrl = URL(string: x)!
+//                let imageData = try! Data(contentsOf: imageUrl)
+//                let image = UIImage(data: imageData)
+                
                 
                 storageRef.downloadURL(completion: {(url, error) in
                     if error != nil {
                         print(error!.localizedDescription)
                         return
                     }
-//                    let downloadURL = url?.absoluteString
-////                    let values: Dictionary<String, Any> = ["download_url": downloadURL]
-               
-                
-                    db.collection("Posts").addDocument(data: [ "uid":  user!.uid, "postID": newPostId!, "imgURL": "gs://coursework-ios-730cb.appspot.com/Posts"+photoID, "caption": self.caption.text!]) { (error) in
+                 let pic = url?.absoluteString
+                    
+                let data = ["uid":  user!.uid,
+                    "postID": newPostId!,
+                    "imgURL": pic,
+                    "caption": self.caption.text!]
+//                    db.collection("Posts").addDocument(data: [ "uid":  user!.uid, "postID": newPostId!, "imgURL": "gs://coursework-ios-730cb.appspot.com/Posts"+photoID, "caption": self.caption.text!]) { (error) in
+                    
+                    ref.child("Posts").childByAutoId().setValue(data)
 
                     if  error != nil{
                         let alert = UIAlertController(title: "Error", message: "Error in posting your post..", preferredStyle: .alert)
@@ -97,18 +108,17 @@ class UploadViewController: UIViewController {
                     self.caption.text = ""
                     self.photo.image = UIImage(named: "icons8-pictures-folder-100")
                     self.tabBarController?.selectedIndex = 0
-                    }
-        })
+                    })
     })
-            
+    
  
     
 }
    
 
 }
-}
 
+}
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

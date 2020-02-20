@@ -23,8 +23,9 @@ class profile {
     var Name : String
     
     
-    init(profImg: String){
+    init(profImg: String, name : String){
         
         profilePic = profImg
+        Name = name
     }
 }

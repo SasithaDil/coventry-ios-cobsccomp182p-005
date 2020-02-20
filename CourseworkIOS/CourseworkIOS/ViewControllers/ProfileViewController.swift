@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
 
     
     @IBOutlet weak var profPic: UIImageView!
-    var pic  = [profile]()
+    var pic  = profile(profImg: "", name: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -40,11 +41,11 @@ class ProfileViewController: UIViewController {
             //                print(Thread.isMainThread)
             if let dict = snapshot.value as? [String: Any]{
                 let picture = dict["ProfilePicURL"] as! String
+                let uname = dict["FirstName"] as! String
                 
                 
-                
-                let photo = profile(profImg: picture)
-                self.pic.append(photo)
+                let photo = profile(profImg: picture, name: uname)
+                self.pic = photo
                 //                    print(self.posts)
 //                self.tableView.reloadData()
     }
@@ -58,7 +59,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
        
-//         let x = pic[].
+         let x = pic.profilePic
         
         let imageUrl = URL(string: x)!
         let imageData = try! Data(contentsOf: imageUrl)

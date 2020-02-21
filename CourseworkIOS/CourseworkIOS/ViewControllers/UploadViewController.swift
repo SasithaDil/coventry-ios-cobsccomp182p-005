@@ -92,6 +92,7 @@ class UploadViewController: UIViewController {
                     "postID": newPostId!,
                     "imgURL": pic,
                     "caption": self.caption.text!]
+                    
 //                    db.collection("Posts").addDocument(data: [ "uid":  user!.uid, "postID": newPostId!, "imgURL": "gs://coursework-ios-730cb.appspot.com/Posts"+photoID, "caption": self.caption.text!]) { (error) in
                     
                     ref.child("Posts").childByAutoId().setValue(data)

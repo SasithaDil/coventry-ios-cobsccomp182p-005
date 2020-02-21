@@ -13,6 +13,7 @@
 		610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3423F4013100E9EA4B /* HomeViewController.swift */; };
 		611788C623F65A5000C4A441 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611788C523F65A5000C4A441 /* EventsViewController.swift */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
+		61CA752523FFC904002AC948 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA752423FFC904002AC948 /* profile.swift */; };
 		61D798B623F26390007C997D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B523F26390007C997D /* LoginViewController.swift */; };
 		61D798B823F28667007C997D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B723F28666007C997D /* Extensions.swift */; };
 		61ECF85023EBEE4700E9992E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECF84F23EBEE4700E9992E /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		610FAA3423F4013100E9EA4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		611788C523F65A5000C4A441 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		61CA752423FFC904002AC948 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		61D798B723F28666007C997D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		61ECF84C23EBEE4700E9992E /* CourseworkIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseworkIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				610A01EF23FD44BE00307500 /* Post.swift */,
+				61CA752423FFC904002AC948 /* profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,
 				61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,
+				61CA752523FFC904002AC948 /* profile.swift in Sources */,
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,
 				61D798B623F26390007C997D /* LoginViewController.swift in Sources */,
 				61ECF85023EBEE4700E9992E /* AppDelegate.swift in Sources */,

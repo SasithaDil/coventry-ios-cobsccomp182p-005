@@ -18,14 +18,4 @@ class Post{
     }
 }
 
-class profile {
-    var profilePic : String
-    var Name : String
-    
-    
-    init(profImg: String, name : String){
-        
-        profilePic = profImg
-        Name = name
-    }
-}
+

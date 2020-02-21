@@ -117,9 +117,9 @@ class RegisterViewController: UIViewController {
                                 
                                 
                                 
-                                let userdata = ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "ProfilePicURL": pic ]
+                                let userdata = ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "ProfilePicURL": pic, "uid": User?.user.uid ]
                                 
-                                ref.child("User").childByAutoId().setValue(userdata)
+                                ref.child("User").child((User?.user.uid)!).setValue(userdata)
                                 
                             })
                         }

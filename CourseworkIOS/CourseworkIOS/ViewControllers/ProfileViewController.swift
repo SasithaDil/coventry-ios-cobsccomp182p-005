@@ -13,7 +13,7 @@ import FirebaseDatabase
 import SwiftyJSON
 
 class ProfileViewController: UIViewController {
-
+    
     
     
     
@@ -24,13 +24,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableVire: UITableView!
     
     var ref: DatabaseReference!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupElements()
         loadImg()
-
+        
     }
     func setupElements(){
         profPic.layer.cornerRadius = profPic.frame.size.width/2
@@ -44,75 +44,46 @@ class ProfileViewController: UIViewController {
     
     @IBAction func Logout(_ sender: Any) {
         
-                try! Auth.auth().signOut()
-                if let storyboard = self.storyboard {
-                    let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-                    self.present(vc, animated: false, completion: nil)
-                }
-        
+        try! Auth.auth().signOut()
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            self.present(vc, animated: false, completion: nil)
         }
+        
+    }
     
     func loadImg(){
         
-         let id = Auth.auth().currentUser?.uid
-      
-//        ref.child("User").child(id!).observe(.childAdded) { (snapshot: DataSnapshot) in
-//        print(id!)
-//            Database.database().reference().child("User").child(id!).observe(.childAdded){ (snapshot) in
+        let id = Auth.auth().currentUser?.uid
         
-                Database.database().reference().child("User").child(id!).observe(.value) { (snapshot: DataSnapshot) in
-                    
-                    print(snapshot.value!)
-                
-                    let dict = snapshot.value as? [String: Any]
-                    let fname = dict!["FirstName"] as? String
-                    let lname = dict!["LastName"] as? String
-                    let mail = dict!["Email"] as? String
-                    let contactNum = dict!["ContactNumber"] as? String
-                    let profImage = dict!["ProfilePicURL"] as? String
-                
-                    
-                    let imageUrl = URL(string: profImage!)
-                    let imageData = try! Data(contentsOf: imageUrl!)
-                    let image = UIImage(data: imageData)
-                   
-                    
-                    self.profPic.image = image!
-                    self.name.text = " Name : " + fname!+" "+lname!
-                    self.email.text = "Email : " + mail!
-                    self.contact.text = "Contact Number : " + contactNum!
-                    
-                
-//                    let imagePath = dict["imgURL"] as! String
+        //        ref.child("User").child(id!).observe(.childAdded) { (snapshot: DataSnapshot) in
+        //        print(id!)
+        //            Database.database().reference().child("User").child(id!).observe(.childAdded){ (snapshot) in
         
-//            let value = snapshot.value as? NSDictionary
-//            let username = value?["FirstName"] as! String
-//            let value = snapshot.value as? String
-//            self.name.text = "\(value!)"
+        Database.database().reference().child("User").child(id!).observe(.value) { (snapshot: DataSnapshot) in
             
-//            let FirstName = value!["FirstName"] as? String
-//            let photo = profile(name: FirstName!)
-//
-//            }) { (error) in
-//                print(error.localizedDescription)
-//        }
-//            self.img.append(photo)
-//            print(self.img)
-//            self.tableVire.reloadData()
+            print(snapshot.value!)
+            
+            let dict = snapshot.value as? [String: Any]
+            let fname = dict!["FirstName"] as? String
+            let lname = dict!["LastName"] as? String
+            let mail = dict!["Email"] as? String
+            let contactNum = dict!["ContactNumber"] as? String
+            let profImage = dict!["ProfilePicURL"] as? String
             
             
-
-//             if let dict = snapshot.value as? [String: Any]{
-//                let picture = dict["ProfilePicURL"] as! String
-//                let uname = dict["FirstName"] as! String
-//
-//                let photo = profile(profImg: picture, name: uname)
-//                self.img.append(photo)
-//                print(self.img)
-//                self.tableVire.reloadData()
-//
-//                        }
-    
+            let imageUrl = URL(string: profImage!)
+            let imageData = try! Data(contentsOf: imageUrl!)
+            let image = UIImage(data: imageData)
+            
+            
+            self.profPic.image = image!
+            self.name.text = " Name : " + fname!+" "+lname!
+            self.email.text = "Email : " + mail!
+            self.contact.text = "Contact Number : " + contactNum!
+            
+            
+            
         }
         
     }

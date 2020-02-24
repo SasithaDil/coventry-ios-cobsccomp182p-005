@@ -16,6 +16,7 @@ target 'CourseworkIOS' do
  pod 'SwiftyJSON'
  pod 'Alamofire', '~> 4.4'
  pod 'AlamofireImage', '~> 3.1'
+ pod 'ImagePicker'
 
   target 'CourseworkIOSTests' do
     inherit! :search_paths

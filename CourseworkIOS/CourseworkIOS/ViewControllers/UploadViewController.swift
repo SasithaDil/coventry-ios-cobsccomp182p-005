@@ -12,10 +12,12 @@ import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 import FirebaseDatabase
+import ImagePicker
 
 
 class UploadViewController: UIViewController {
-
+    
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var btnTrash: UIButton!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var caption: UITextView!
@@ -27,7 +29,7 @@ class UploadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupElements()
         ImageUpload()
         
@@ -53,6 +55,8 @@ class UploadViewController: UIViewController {
         present(pickerController, animated: true, completion: nil)
     }
     
+    @IBAction func cameraButton(_ sender: Any) {
+    }
     @IBAction func Remove_post(_ sender: Any) {
         self.caption.text = ""
         self.photo.image = UIImage(named: "icons8-pictures-folder-100")
@@ -67,59 +71,65 @@ class UploadViewController: UIViewController {
                     return
                 }
                 
-              
+                
                 
                 let ref = Database.database().reference()
                 let postRef = ref.child("Posts")
                 let newPostId = postRef.childByAutoId().key
                 let user = Auth.auth().currentUser
-//                let newPostRef = postRef.child(newPostId!)
-//                let db = Firestore.firestore()
-//                let pic = "gs://coursework-ios-730cb.appspot.com/Posts/"+photoID
-//                let imageUrl = URL(string: x)!
-//                let imageData = try! Data(contentsOf: imageUrl)
-//                let image = UIImage(data: imageData)
-                
-                
-                storageRef.downloadURL(completion: {(url, error) in
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                 let pic = url?.absoluteString
+                 ref.child("User").child(user!.uid).observe(.value) { (snapshot: DataSnapshot) in
                     
-                let data = ["uid":  user!.uid,
-                    "postID": newPostId!,
-                    "imgURL": pic,
-                    "caption": self.caption.text!]
+                    print(snapshot.value!)
                     
-//                    db.collection("Posts").addDocument(data: [ "uid":  user!.uid, "postID": newPostId!, "imgURL": "gs://coursework-ios-730cb.appspot.com/Posts"+photoID, "caption": self.caption.text!]) { (error) in
+                    let dict = snapshot.value as? [String: Any]
+                    let fname = dict!["FirstName"] as? String
+                    let lname = dict!["LastName"] as? String
+                    let profImage = dict!["ProfilePicURL"] as? String
                     
-                    ref.child("Posts").childByAutoId().setValue(data)
-
-                    if  error != nil{
-                        let alert = UIAlertController(title: "Error", message: "Error in posting your post..", preferredStyle: .alert)
+                    
+                    let username =  fname!+" "+lname!
+                    
+                    
+                    storageRef.downloadURL(completion: {(url, error) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                            return
+                        }
+                        let pic = url?.absoluteString
+                        
+                        let data = ["uid":  user!.uid,
+                                    "postID": newPostId!,
+                                    "imgURL": pic,
+                                    "caption": self.caption.text!,
+                                    "username": username,
+                                    "profPic": profImage]
+                        
+                        ref.child("Posts").childByAutoId().setValue(data)
+                        
+                        if  error != nil{
+                            let alert = UIAlertController(title: "Error", message: "Error in posting your post..", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                        }
+                        let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true)
-                    }
-                    let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                    
-                    self.caption.text = ""
-                    self.photo.image = UIImage(named: "icons8-pictures-folder-100")
-                    self.tabBarController?.selectedIndex = 0
+                        
+                        self.caption.text = ""
+                        self.photo.image = UIImage(named: "icons8-pictures-folder-100")
+                        self.tabBarController?.selectedIndex = 0
                     })
-    })
+                    
+                }
+                
+            })
+        }
+    }
     
- 
     
 }
-   
 
-}
 
-}
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -131,5 +141,5 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
         print(info)
         
         dismiss(animated: true, completion: nil)
-}
+    }
 }

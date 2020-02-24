@@ -22,6 +22,12 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profPic.layer.cornerRadius = profPic.frame.size.width/2
+        profPic.clipsToBounds = true
+        profPic.layer.borderColor = UIColor.blue.cgColor
+        profPic.layer.borderWidth = 5
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

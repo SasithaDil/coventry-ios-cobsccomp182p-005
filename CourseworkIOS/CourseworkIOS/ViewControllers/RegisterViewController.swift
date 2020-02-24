@@ -45,6 +45,10 @@ class RegisterViewController: UIViewController {
         Utilities.textFieldStyles(txtConfirmPassword)
         Utilities.buttonStyles(btnRegister)
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds = true
+
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

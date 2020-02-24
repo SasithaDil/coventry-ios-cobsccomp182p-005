@@ -11,8 +11,8 @@ import CoreData
 import Firebase
 
 
-let primaryColor = UIColor(red: 42/255, green: 157/255, blue: 244/255, alpha: 1)
-let secondaryColor = UIColor(red: 2/255, green: 24/255, blue: 49/255, alpha: 1)
+let primaryColor = UIColor(red: 140/255, green: 140/255, blue: 140/255, alpha: 1)
+let secondaryColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

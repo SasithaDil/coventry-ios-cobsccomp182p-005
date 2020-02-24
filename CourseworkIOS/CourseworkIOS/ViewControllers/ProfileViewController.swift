@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableVire: UITableView!
     
     var ref: DatabaseReference!
-    var img  = [profile]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,13 @@ class ProfileViewController: UIViewController {
 
     }
     func setupElements(){
-         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        profPic.layer.cornerRadius = profPic.frame.size.width/2
+        profPic.clipsToBounds = true
+        profPic.layer.borderColor = UIColor.blue.cgColor
+        profPic.layer.borderWidth = 5
+        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+        
+        
     }
     
     @IBAction func Logout(_ sender: Any) {
@@ -63,15 +69,15 @@ class ProfileViewController: UIViewController {
                     let lname = dict!["LastName"] as? String
                     let mail = dict!["Email"] as? String
                     let contactNum = dict!["ContactNumber"] as? String
-//                    let profImage = dict!["ProfilePicURL:"] as? String
+                    let profImage = dict!["ProfilePicURL"] as? String
                 
                     
-//                    let imageUrl = URL(string: profImage!)
-//                    let imageData = try! Data(contentsOf: imageUrl!)
-//                    let image = UIImage(data: imageData)
+                    let imageUrl = URL(string: profImage!)
+                    let imageData = try! Data(contentsOf: imageUrl!)
+                    let image = UIImage(data: imageData)
                    
                     
-//                    self.profPic.image = image!
+                    self.profPic.image = image!
                     self.name.text = " Name : " + fname!+" "+lname!
                     self.email.text = "Email : " + mail!
                     self.contact.text = "Contact Number : " + contactNum!
@@ -108,28 +114,6 @@ class ProfileViewController: UIViewController {
 //                        }
     
         }
-        
-    }
-}
-extension ProfileViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return img.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        
-//        cell.textLabel?.text = img[indexPath.row].Name
-        
-//        let x = img[indexPath.row].profilePic
-//
-//        let imageUrl = URL(string: x)!
-//        let imageData = try! Data(contentsOf: imageUrl)
-//        let image = UIImage(data: imageData)
-//        cell.imageView?.image = image
-        cell.backgroundColor = UIColor.clear
-        return cell
         
     }
 }

@@ -12,6 +12,8 @@
 		610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */; };
 		610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3423F4013100E9EA4B /* HomeViewController.swift */; };
 		611788C623F65A5000C4A441 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611788C523F65A5000C4A441 /* EventsViewController.swift */; };
+		612FCA072403951C008B8EA6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */; };
+		612FCA082403951C008B8EA6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
 		61CA752523FFC904002AC948 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA752423FFC904002AC948 /* profile.swift */; };
 		61D798B623F26390007C997D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B523F26390007C997D /* LoginViewController.swift */; };
@@ -46,6 +48,8 @@
 		610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		610FAA3423F4013100E9EA4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		611788C523F65A5000C4A441 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		61CA752423FFC904002AC948 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				61ECF85E23EBEE4800E9992E /* Info.plist */,
 				61ECF85623EBEE4700E9992E /* CourseworkIOS.xcdatamodeld */,
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
+				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
+				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				61ECF85D23EBEE4800E9992E /* LaunchScreen.storyboard in Resources */,
 				610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */,
 				61ECF85A23EBEE4800E9992E /* Assets.xcassets in Resources */,
+				612FCA082403951C008B8EA6 /* CustomTableViewCell.xib in Resources */,
 				61ECF85523EBEE4700E9992E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +374,7 @@
 				61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,
 				61CA752523FFC904002AC948 /* profile.swift in Sources */,
+				612FCA072403951C008B8EA6 /* CustomTableViewCell.swift in Sources */,
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,
 				61D798B623F26390007C997D /* LoginViewController.swift in Sources */,
 				61ECF85023EBEE4700E9992E /* AppDelegate.swift in Sources */,

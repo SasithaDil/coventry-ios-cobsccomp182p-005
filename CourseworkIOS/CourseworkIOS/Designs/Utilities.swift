@@ -37,7 +37,19 @@ class Utilities {
         
         
     }
-    
+    static func buttonStylesCancel(_ button:UIButton) {
+        
+        button.backgroundColor = UIColor.init(red: 209/255, green: 13/255, blue: 37/255, alpha: 1)
+        button.layer.cornerRadius = 10.0
+        button.tintColor = UIColor.white
+        
+        
+    }
+    func isValidEmail(_ email: String) -> Bool {
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
+        return emailPred.evaluate(with: email)
+    }
 
     
     static func isPasswordValid(_ password : String) -> Bool {

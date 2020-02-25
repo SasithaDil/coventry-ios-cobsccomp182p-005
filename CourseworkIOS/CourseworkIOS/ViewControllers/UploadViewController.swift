@@ -17,6 +17,11 @@ import ImagePicker
 
 class UploadViewController: UIViewController {
     
+    
+    
+    @IBOutlet weak var txtTime: UITextField!
+    @IBOutlet weak var txtDate: UITextField!
+    @IBOutlet weak var dateTimePicker: UIDatePicker!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var btnTrash: UIButton!
     @IBOutlet weak var btnShare: UIButton!
@@ -26,19 +31,38 @@ class UploadViewController: UIViewController {
     var selectedImage: UIImage!
     
     var ref: DatabaseReference!
-    
+    private var datePicker: UIDatePicker?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupElements()
         ImageUpload()
+        setupDateTime()
         
-        
-        
+        let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(UploadViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGuesture)
     }
     func setupElements(){
+        Utilities.textFieldStyles(txtDate)
         Utilities.buttonStyles(btnShare)
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    func setupDateTime(){
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        
+        datePicker?.addTarget(self, action: #selector(UploadViewController.dateChanged(datePicker:)), for: .valueChanged)
+        txtDate.inputView = datePicker
+    }
+    @objc func dateChanged(datePicker: UIDatePicker){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        txtDate.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -60,6 +84,7 @@ class UploadViewController: UIViewController {
     @IBAction func Remove_post(_ sender: Any) {
         self.caption.text = ""
         self.photo.image = UIImage(named: "icons8-pictures-folder-100")
+        self.txtDate.text = ""
         
     }
     
@@ -102,6 +127,8 @@ class UploadViewController: UIViewController {
                                     "imgURL": pic,
                                     "caption": self.caption.text!,
                                     "username": username,
+                                    "eventDate": self.txtDate.text!,
+                                    "startingTime": self.txtTime.text!,
                                     "profPic": profImage]
                         
                         ref.child("Posts").childByAutoId().setValue(data)
@@ -118,6 +145,7 @@ class UploadViewController: UIViewController {
                         self.caption.text = ""
                         self.photo.image = UIImage(named: "icons8-pictures-folder-100")
                         self.tabBarController?.selectedIndex = 0
+                        self.txtDate.text = ""
                     })
                     
                 }

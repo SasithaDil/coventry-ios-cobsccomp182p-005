@@ -16,6 +16,7 @@
 		612FCA082403951C008B8EA6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */; };
 		612FCA0A2403D92B008B8EA6 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FCA092403D92B008B8EA6 /* PreviewViewController.swift */; };
 		612FCA0C2403D9C6008B8EA6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */; };
+		61325005240545D20080D0C9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
 		61CA752523FFC904002AC948 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA752423FFC904002AC948 /* profile.swift */; };
 		61D798B623F26390007C997D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B523F26390007C997D /* LoginViewController.swift */; };
@@ -54,6 +55,7 @@
 		612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		612FCA092403D92B008B8EA6 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = ../PreviewViewController.swift; sourceTree = "<group>"; };
 		612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
+		61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		61CA752423FFC904002AC948 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
 				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
 				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
+				61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				612FCA0A2403D92B008B8EA6 /* PreviewViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,
 				61CA752523FFC904002AC948 /* profile.swift in Sources */,
+				61325005240545D20080D0C9 /* ForgotPasswordViewController.swift in Sources */,
 				612FCA072403951C008B8EA6 /* CustomTableViewCell.swift in Sources */,
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,
 				612FCA0C2403D9C6008B8EA6 /* CameraViewController.swift in Sources */,

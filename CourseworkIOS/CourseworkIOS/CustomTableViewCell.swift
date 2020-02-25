@@ -13,7 +13,8 @@ class CustomTableViewCell: UITableViewCell {
     
     
 
-//    @IBOutlet weak var captiontext: UILabel!
+    @IBOutlet weak var More: UIButton!
+    //    @IBOutlet weak var captiontext: UILabel!
     @IBOutlet weak var captiontext: UILabel!
     @IBOutlet weak var imagePOST: UIImageView!
     @IBOutlet weak var location: UILabel!
@@ -36,4 +37,7 @@ class CustomTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func moreButton(_ sender: Any) {
+     
+    }
 }

@@ -44,6 +44,7 @@ class UploadViewController: UIViewController {
     }
     func setupElements(){
         Utilities.textFieldStyles(txtDate)
+        Utilities.textFieldStyles(txtTime)
         Utilities.buttonStyles(btnShare)
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }

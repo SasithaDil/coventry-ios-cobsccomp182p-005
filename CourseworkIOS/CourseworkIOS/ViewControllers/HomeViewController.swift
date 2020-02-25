@@ -66,9 +66,6 @@ class HomeViewController: UIViewController {
                 
                 
                 
-                
-                
-                
                 let post = Post(captionText: captionText, imagePath: imagePath, userDetails: username, userPic: profPicture)
                 self.posts.append(post)
                 //                    print(self.posts)

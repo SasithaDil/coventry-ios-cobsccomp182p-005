@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class ForgotPasswordViewController: UIViewController {
-
+    
     
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var lblError: UILabel!
@@ -19,8 +19,8 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet var emailContainerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupElements()
+        
+        setupElements()
     }
     func setupElements(){
         Utilities.textFieldStyles(txtEmail)
@@ -29,7 +29,7 @@ class ForgotPasswordViewController: UIViewController {
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         lblError.alpha = 0
     }
-
+    
     @IBAction func resetPassword(_ sender: Any) {
         let validEmail = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if validEmail == ""{
@@ -37,23 +37,23 @@ class ForgotPasswordViewController: UIViewController {
             lblError.alpha = 1
         }else{
             Auth.auth().sendPasswordReset(withEmail: txtEmail.text!, completion: { (error) in
+                
                 if error != nil{
-                    if error == nil{
-                        let alert = UIAlertController(title: "Successful..", message: "You have changed your password..", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true)
-                        
-                    }
-                    else{
-                        self.lblError.text = error!.localizedDescription
-                        self.lblError.alpha  = 1
-                    }
+                    
+                    self.lblError.text = error!.localizedDescription
+                    self.lblError.alpha  = 1
                 }
-                
-                
+                else{
+                    let alert = UIAlertController(title: "Successful..", message: "Sent an email to ", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    self.performSegue(withIdentifier: "LoginVC", sender: nil)
+                    
+                }
             }
-            )}
-        }
+                
+        )}
     }
+}
 
 

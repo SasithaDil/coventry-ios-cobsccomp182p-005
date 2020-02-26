@@ -17,6 +17,9 @@
 		612FCA0A2403D92B008B8EA6 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FCA092403D92B008B8EA6 /* PreviewViewController.swift */; };
 		612FCA0C2403D9C6008B8EA6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */; };
 		61325005240545D20080D0C9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */; };
+		6142E1B724067780005D7516 /* postDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E1B524067780005D7516 /* postDetailsViewController.swift */; };
+		6142E1B824067780005D7516 /* postDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6142E1B624067780005D7516 /* postDetailsViewController.xib */; };
+		6142E1BA2406E44A005D7516 /* Redirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E1B92406E44A005D7516 /* Redirect.swift */; };
 		61627E5D2405775700F30F37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61627E5C2405775700F30F37 /* MapViewController.swift */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
 		61CA752523FFC904002AC948 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA752423FFC904002AC948 /* profile.swift */; };
@@ -57,7 +60,10 @@
 		612FCA092403D92B008B8EA6 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = ../PreviewViewController.swift; sourceTree = "<group>"; };
 		612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		61627E5C2405775700F30F37 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6142E1B524067780005D7516 /* postDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetailsViewController.swift; sourceTree = "<group>"; };
+		6142E1B624067780005D7516 /* postDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = postDetailsViewController.xib; sourceTree = "<group>"; };
+		6142E1B92406E44A005D7516 /* Redirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redirect.swift; sourceTree = "<group>"; };
+		61627E5C2405775700F30F37 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		61CA752423FFC904002AC948 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 				611788C523F65A5000C4A441 /* EventsViewController.swift */,
 				61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */,
 				612FCA092403D92B008B8EA6 /* PreviewViewController.swift */,
+				61627E5C2405775700F30F37 /* MapViewController.swift */,
 				612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */,
 				610FAA3423F4013100E9EA4B /* HomeViewController.swift */,
 			);
@@ -172,7 +179,9 @@
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
 				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
 				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
-				61627E5C2405775700F30F37 /* MapViewController.swift */,
+				6142E1B524067780005D7516 /* postDetailsViewController.swift */,
+				6142E1B624067780005D7516 /* postDetailsViewController.xib */,
+				6142E1B92406E44A005D7516 /* Redirect.swift */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61ECF85D23EBEE4800E9992E /* LaunchScreen.storyboard in Resources */,
+				6142E1B824067780005D7516 /* postDetailsViewController.xib in Resources */,
 				610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */,
 				61ECF85A23EBEE4800E9992E /* Assets.xcassets in Resources */,
 				612FCA082403951C008B8EA6 /* CustomTableViewCell.xib in Resources */,
@@ -383,6 +393,8 @@
 				61D798B823F28667007C997D /* Extensions.swift in Sources */,
 				610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */,
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,
+				6142E1BA2406E44A005D7516 /* Redirect.swift in Sources */,
+				6142E1B724067780005D7516 /* postDetailsViewController.swift in Sources */,
 				61FDC5DA23F52C6B00C701C7 /* ProfileViewController.swift in Sources */,
 				612FCA0A2403D92B008B8EA6 /* PreviewViewController.swift in Sources */,
 				610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */,

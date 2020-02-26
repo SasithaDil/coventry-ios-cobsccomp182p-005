@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-import SwiftyJSON
+
 
 class ProfileViewController: UIViewController {
     

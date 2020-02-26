@@ -13,12 +13,20 @@ class Post{
     var imgURL : String
     var user : String
     var userImageURL: String
+    var id: String
+    var eventDate: String
+    var eventTime: String
+    var userID: String
     
-    init(captionText: String, imagePath: String, userDetails: String, userPic: String) {
+    init(captionText: String, imagePath: String, userDetails: String, userPic: String, postId: String, date: String, time: String, uid: String) {
         caption = captionText
         imgURL = imagePath
         user = userDetails
         userImageURL = userPic
+        id = postId
+        eventDate = date
+        eventTime = time
+        userID = uid
     }
 }
 

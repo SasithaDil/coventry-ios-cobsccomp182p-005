@@ -24,13 +24,14 @@ class HomeViewController: UIViewController {
     var ref: DatabaseReference!
     var DatabaseHandle: DatabaseHandle!
     var posts  = [Post]()
-    //    var postData = [String]()
+//    var postData = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil),
+        //                           forCellReuseIdentifier: "CustomTableViewCell")
         
         loadPosts()
         setupElements()
@@ -55,7 +56,7 @@ class HomeViewController: UIViewController {
         
         
         
-        Database.database().reference().child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+        Database.database().reference().child("Posts").queryOrdered(byChild: "postDate").observe(.childAdded) { (snapshot: DataSnapshot) in
             //                print(Thread.isMainThread)
             
             if let dict = snapshot.value as? [String: Any]{
@@ -63,11 +64,15 @@ class HomeViewController: UIViewController {
                 let imagePath = dict["imgURL"] as! String
                 let profPicture = dict["profPic"] as! String
                 let username = dict["username"] as! String
+                let postID = dict["postID"] as! String
+                let eventDate = dict["eventDate"] as! String
+                let eventTime = dict["startingTime"] as! String
+                let userId = dict["uid"] as! String
                 
                 
-                
-                let post = Post(captionText: captionText, imagePath: imagePath, userDetails: username, userPic: profPicture)
-                self.posts.append(post)
+                let post = Post(captionText: captionText, imagePath: imagePath, userDetails: username, userPic: profPicture, postId: postID, date: eventDate, time: eventTime, uid: userId)
+                //                self.posts.append(post)
+                self.posts.insert(post, at: 0)
                 //                    print(self.posts)
                 self.tableView.reloadData()
                 
@@ -83,11 +88,6 @@ class HomeViewController: UIViewController {
     
 }
 
-//}
-
-
-
-
 
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,6 +96,7 @@ extension HomeViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! CustomTableViewCell
+        
         
         cell.captiontext?.text = posts[indexPath.row].caption
         cell.name?.text = posts[indexPath.row].user
@@ -117,14 +118,21 @@ extension HomeViewController: UITableViewDataSource{
         return cell
         
     }
+    
 }
 
 extension HomeViewController: UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height/2
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("did select row at : \(indexPath)")
+        let vc = postDetailsViewController()
+        let selectedPost = posts[indexPath.row]
+        vc.post = selectedPost
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
+        
     }
 }

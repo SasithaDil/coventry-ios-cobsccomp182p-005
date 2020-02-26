@@ -20,6 +20,11 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profPic: UIImageView!
+    
+    var post: Post!
+    
+    weak var delegate : CustomTableViewCellDeligate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,6 +34,10 @@ class CustomTableViewCell: UITableViewCell {
         profPic.layer.borderColor = UIColor.blue.cgColor
         profPic.layer.borderWidth = 5
         
+//         self.More.addTarget(self, action: #selector(moreButton(_:)), for: .touchUpInside)
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector())
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +46,17 @@ class CustomTableViewCell: UITableViewCell {
         
     }
     
-    @IBAction func moreButton(_ sender: Any) {
-     
+    
+    @IBAction func MOreDetails(_ sender: Any) {
     }
+    @IBAction func moreButton(_ sender: UIButton) {
+//        if let user = User,
+//            let delegate = delegate {
+//            self.delegate?.moreDetailsTableViewCell(self, moreButtonFor: user)
+    }
+}
+//}
+protocol CustomTableViewCellDeligate: AnyObject {
+    func moreDetailsTableViewCell(_ CustomTableViewCell: CustomTableViewCell, moreButtonFor user: String)
+
 }

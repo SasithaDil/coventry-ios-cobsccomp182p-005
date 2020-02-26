@@ -122,15 +122,17 @@ class UploadViewController: UIViewController {
                             return
                         }
                         let pic = url?.absoluteString
+                       
                         
                         let data = ["uid":  user!.uid,
                                     "postID": newPostId!,
-                                    "imgURL": pic,
+                                    "imgURL": pic as Any,
                                     "caption": self.caption.text!,
                                     "username": username,
                                     "eventDate": self.txtDate.text!,
                                     "startingTime": self.txtTime.text!,
-                                    "profPic": profImage]
+                                    "postDate": ServerValue.timestamp(),
+                                    "profPic": profImage as Any] as [String : Any]
                         
                         ref.child("Posts").childByAutoId().setValue(data)
                         

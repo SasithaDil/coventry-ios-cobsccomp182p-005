@@ -283,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="1630.4347826086957" y="-807.58928571428567"/>
         </scene>
-        <!--Upload-->
+        <!--Events-->
         <scene sceneID="QW5-Kk-7Ql">
             <objects>
                 <viewController id="gq2-eK-IHs" customClass="UploadViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -360,7 +360,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="zGi-ph-H7X"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upload" image="icons8-upload-100" id="JAv-Re-m4Q"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="icons8-event-accepted-tentatively-100" id="JAv-Re-m4Q"/>
                     <connections>
                         <outlet property="btnShare" destination="wTL-yZ-jIG" id="ejd-79-uDD"/>
                         <outlet property="btnTrash" destination="0kY-Rw-sFs" id="w79-Uc-1NE"/>
@@ -575,22 +575,6 @@
             </objects>
             <point key="canvasLocation" x="1871" y="883"/>
         </scene>
-        <!--Events-->
-        <scene sceneID="O7Q-y8-atw">
-            <objects>
-                <viewController id="gUP-V3-GHX" customClass="EventsViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="itf-TA-lFJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="rTi-pD-g6c"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="icons8-event-accepted-tentatively-100" id="WHL-3v-QZG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HWo-cD-YgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2722" y="883"/>
-        </scene>
         <!--Map View Controller-->
         <scene sceneID="dDG-ti-exq">
             <objects>
@@ -662,6 +646,30 @@
             </objects>
             <point key="canvasLocation" x="3482.608695652174" y="-267.1875"/>
         </scene>
+        <!--Events View Controller-->
+        <scene sceneID="Uor-M1-N8c">
+            <objects>
+                <viewController storyboardIdentifier="EventsViewController" id="Vy1-5b-GaY" customClass="EventsViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KA4-ER-Gka">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUu-19-o03">
+                                <rect key="frame" x="186" y="362" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lc6-hz-nNQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22I-m0-bLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4434" y="-277"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Xq-4B-kTD">
             <objects>
@@ -674,7 +682,6 @@
                     <connections>
                         <segue destination="RQ7-Sq-kPK" kind="relationship" relationship="viewControllers" id="sEz-Rb-Oh6"/>
                         <segue destination="gq2-eK-IHs" kind="relationship" relationship="viewControllers" id="PeU-KB-BTd"/>
-                        <segue destination="gUP-V3-GHX" kind="relationship" relationship="viewControllers" id="zfT-o2-TlF"/>
                         <segue destination="ni0-pX-KkK" kind="relationship" relationship="viewControllers" id="jHE-PN-f5w"/>
                     </connections>
                 </tabBarController>
@@ -852,7 +859,6 @@
         <image name="icons8-pictures-folder-100" width="33" height="33"/>
         <image name="icons8-trash-100" width="33" height="33"/>
         <image name="icons8-unsplash-100" width="33" height="33"/>
-        <image name="icons8-upload-100" width="33" height="33"/>
         <image name="icons8-user-100" width="33" height="33"/>
         <image name="nibmcl" width="1200" height="1200"/>
         <image name="nibms" width="2480" height="3508"/>

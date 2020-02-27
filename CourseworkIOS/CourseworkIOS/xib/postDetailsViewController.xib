@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="postDetailsViewController" customModule="CourseworkIOS" customModuleProvider="target">
             <connections>
+                <outlet property="btnCancel" destination="4g0-Gh-mnm" id="W3n-oS-kj8"/>
                 <outlet property="btnNo" destination="C2N-0f-nc9" id="t9a-NN-UXh"/>
                 <outlet property="btnYes" destination="cD6-xI-3Q3" id="eI3-XF-ePk"/>
                 <outlet property="count" destination="p0E-Fa-8X0" id="p4p-af-WbF"/>
@@ -76,7 +77,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2N-0f-nc9">
                     <rect key="frame" x="20" y="727" width="374" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="I won't participate"/>
+                    <state key="normal" title="I won't participate">
+                        <color key="titleColor" red="0.0" green="0.47843137254901957" blue="0.99999129772186279" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="btnNotParticipate:" destination="-1" eventType="touchUpInside" id="b5G-ZM-E1O"/>
                     </connections>
@@ -98,12 +101,29 @@
                     <color key="textColor" red="0.0078431372550000003" green="0.094117647060000004" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="my1-aH-B2Y">
+                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items/>
+                </tabBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g0-Gh-mnm">
+                    <rect key="frame" x="20" y="787" width="374" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.23529411764705882" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnCancel:" destination="-1" eventType="touchUpInside" id="jDb-PZ-euM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="TvT-dG-CYt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="0Hi-WE-gki"/>
                 <constraint firstItem="C2N-0f-nc9" firstAttribute="top" secondItem="cD6-xI-3Q3" secondAttribute="bottom" constant="20" id="0tE-oO-XNo"/>
                 <constraint firstItem="VUf-4L-2Mi" firstAttribute="top" secondItem="E5H-hk-qH7" secondAttribute="bottom" constant="27" id="163-4W-kax"/>
+                <constraint firstItem="4g0-Gh-mnm" firstAttribute="width" secondItem="C2N-0f-nc9" secondAttribute="width" id="1Vt-bd-N09"/>
                 <constraint firstItem="VUf-4L-2Mi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="1WK-Wh-VyG"/>
                 <constraint firstItem="XiI-bQ-5HU" firstAttribute="height" secondItem="VUf-4L-2Mi" secondAttribute="height" id="3Yb-zk-qv7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pN1-ba-B6l" secondAttribute="trailing" constant="20" id="4C3-Lu-FPh"/>
@@ -114,14 +134,18 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E5H-hk-qH7" secondAttribute="trailing" constant="20" id="CoE-cq-it9"/>
                 <constraint firstItem="cD6-xI-3Q3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JS8-Om-Rlz"/>
                 <constraint firstItem="E5H-hk-qH7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="JhP-xf-9WM"/>
+                <constraint firstItem="4g0-Gh-mnm" firstAttribute="height" secondItem="C2N-0f-nc9" secondAttribute="height" id="O7C-cL-gKh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cD6-xI-3Q3" secondAttribute="trailing" constant="20" id="PkZ-Hl-WzM"/>
                 <constraint firstItem="E5H-hk-qH7" firstAttribute="trailing" secondItem="XiI-bQ-5HU" secondAttribute="trailing" id="RCc-aa-GT6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4g0-Gh-mnm" secondAttribute="trailing" constant="20" id="Yma-Fi-aAB"/>
                 <constraint firstItem="TvT-dG-CYt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="a0z-Tl-JaM"/>
                 <constraint firstItem="XiI-bQ-5HU" firstAttribute="width" secondItem="VUf-4L-2Mi" secondAttribute="width" id="dNd-F6-gFC"/>
                 <constraint firstItem="LWn-OG-4hp" firstAttribute="trailing" secondItem="XiI-bQ-5HU" secondAttribute="trailing" id="e5H-qO-FH3"/>
+                <constraint firstItem="4g0-Gh-mnm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gel-Q0-45H"/>
                 <constraint firstItem="LWn-OG-4hp" firstAttribute="leading" secondItem="E5H-hk-qH7" secondAttribute="leading" id="hAO-xy-Vl4"/>
                 <constraint firstItem="cD6-xI-3Q3" firstAttribute="top" secondItem="LWn-OG-4hp" secondAttribute="bottom" constant="30" id="oQo-ul-nC3"/>
                 <constraint firstItem="pN1-ba-B6l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="rLL-jN-tOU"/>
+                <constraint firstItem="4g0-Gh-mnm" firstAttribute="top" secondItem="C2N-0f-nc9" secondAttribute="bottom" constant="20" id="rVl-fb-FvI"/>
                 <constraint firstItem="E5H-hk-qH7" firstAttribute="top" secondItem="TvT-dG-CYt" secondAttribute="bottom" constant="30" id="sqg-AH-lUQ"/>
                 <constraint firstItem="C2N-0f-nc9" firstAttribute="height" secondItem="cD6-xI-3Q3" secondAttribute="height" id="tIU-17-827"/>
                 <constraint firstItem="LWn-OG-4hp" firstAttribute="top" secondItem="XiI-bQ-5HU" secondAttribute="bottom" constant="17" id="tsx-XD-g8k"/>
@@ -129,7 +153,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C2N-0f-nc9" secondAttribute="trailing" constant="20" id="urV-Xp-5k8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="134.78260869565219" y="111.83035714285714"/>
+            <point key="canvasLocation" x="-46.376811594202906" y="0.0"/>
         </view>
     </objects>
 </document>

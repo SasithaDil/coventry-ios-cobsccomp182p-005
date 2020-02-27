@@ -135,6 +135,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		6149D6A92408389B00DE23FC /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
+				6142E1B624067780005D7516 /* postDetailsViewController.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
 		617EFD1923EC20260063C2D4 /* Designs */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +179,7 @@
 				61ECF84F23EBEE4700E9992E /* AppDelegate.swift */,
 				617EFD1923EC20260063C2D4 /* Designs */,
 				610A01EE23FD444B00307500 /* Models */,
+				6149D6A92408389B00DE23FC /* xib */,
 				610FAA3623F4119600E9EA4B /* ViewControllers */,
 				61ECF85323EBEE4700E9992E /* Main.storyboard */,
 				61ECF85923EBEE4800E9992E /* Assets.xcassets */,
@@ -178,9 +188,7 @@
 				61ECF85623EBEE4700E9992E /* CourseworkIOS.xcdatamodeld */,
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
 				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
-				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
 				6142E1B524067780005D7516 /* postDetailsViewController.swift */,
-				6142E1B624067780005D7516 /* postDetailsViewController.xib */,
 				6142E1B92406E44A005D7516 /* Redirect.swift */,
 			);
 			path = CourseworkIOS;

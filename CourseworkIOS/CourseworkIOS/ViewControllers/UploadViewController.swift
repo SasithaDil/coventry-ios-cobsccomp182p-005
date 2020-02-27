@@ -64,6 +64,8 @@ class UploadViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         txtDate.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
+        
+        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -136,19 +138,22 @@ class UploadViewController: UIViewController {
                         
                         ref.child("Posts").childByAutoId().setValue(data)
                         
+                        let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+                        
+                        self.performSegue(withIdentifier: "HomeVC", sender: nil)
+                        self.caption.text = ""
+                        self.photo.image = UIImage(named: "icons8-pictures-folder-100")
+                        self.tabBarController?.selectedIndex = 0
+                        self.txtDate.text = ""
+                        
                         if  error != nil{
                             let alert = UIAlertController(title: "Error", message: "Error in posting your post..", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alert, animated: true)
                         }
-                        let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true)
                         
-                        self.caption.text = ""
-                        self.photo.image = UIImage(named: "icons8-pictures-folder-100")
-                        self.tabBarController?.selectedIndex = 0
-                        self.txtDate.text = ""
                     })
                     
                 }

@@ -330,6 +330,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="timeChanged:" destination="gq2-eK-IHs" eventType="editingDidEnd" id="hbH-tN-fVt"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kY-Rw-sFs">
                                 <rect key="frame" x="348" y="670" width="33" height="33"/>
@@ -614,7 +617,7 @@
         <!--Home-->
         <scene sceneID="krF-4f-QF8">
             <objects>
-                <viewController id="RQ7-Sq-kPK" customClass="HomeViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="RQ7-Sq-kPK" customClass="HomeViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Og6-5w-6a3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -645,30 +648,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsd-6E-sKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3482.608695652174" y="-267.1875"/>
-        </scene>
-        <!--Events View Controller-->
-        <scene sceneID="Uor-M1-N8c">
-            <objects>
-                <viewController storyboardIdentifier="EventsViewController" id="Vy1-5b-GaY" customClass="EventsViewController" customModule="CourseworkIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KA4-ER-Gka">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUu-19-o03">
-                                <rect key="frame" x="186" y="362" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Lc6-hz-nNQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="22I-m0-bLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4434" y="-277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Xq-4B-kTD">

@@ -13,8 +13,9 @@ import FirebaseDatabase
 
 
 class postDetailsViewController: UIViewController {
-
     
+    
+    @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var count: UILabel!
     @IBOutlet weak var btnNo: UIButton!
     @IBOutlet weak var btnYes: UIButton!
@@ -24,16 +25,27 @@ class postDetailsViewController: UIViewController {
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-//    var UID: String?
-     var post: Post!
-    var c = 0
+    //    var UID: String?
+    var post: Post!
+    
+    let ref = Database.database().reference()
+    let id = Auth.auth().currentUser?.uid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(btnNotParticipate(_:)))
+        tap.numberOfTapsRequired = 1
+        btnNo.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
         loadData()
         setupElements()
+        getCount()
     }
+    @objc func btnNotParticipate(){
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     func setupElements(){
         Utilities.buttonStyles(btnYes)
@@ -47,6 +59,22 @@ class postDetailsViewController: UIViewController {
         imgUser.layer.borderWidth = 5
     }
     
+    func  getCount(){
+        
+        ref.child("EventsParticipants/\(self.post.id)/participants/").observe(.value) { (snapshot: DataSnapshot) in
+            
+            print(snapshot.value!)
+            
+            let dict = snapshot.value as? [String: Any]
+            
+            //            let IDofPost = dict!["postID"] as? String
+            
+            let c = dict?.count
+            
+            self.count.text = "Participant Count :\(c ?? 0)"
+            
+        }
+    }
     func loadData(){
         self.lblName.text = post.user
         self.lblcaption.text = post.caption
@@ -58,7 +86,7 @@ class postDetailsViewController: UIViewController {
         let profImageUrl = URL(string: usrImg)!
         let profImageData = try! Data(contentsOf: profImageUrl)
         let profImage = UIImage(data: profImageData)
-      
+        
         self.imgUser.image = profImage
         
         let x = post.imgURL
@@ -70,24 +98,95 @@ class postDetailsViewController: UIViewController {
         self.imgPost.image = imageP
         
     }
-
+    
+    
+    
     @IBAction func btnParticipate(_ sender: Any) {
         
-        let id = Auth.auth().currentUser?.uid
         
-        if id != post.userID {
-        c = c + 1;
-        self.count.text = "Participants count : \(c)"
+        let PostUID = self.post.userID
+        
+        ref.child("User").child(id!).observe(.value) { (snapshot: DataSnapshot) in
+            
+            
+            let dict = snapshot.value as? [String: Any]
+            let fname = dict!["FirstName"] as? String
+            let lname = dict!["LastName"] as? String
+            let mail = dict!["Email"] as? String
+            let contactNum = dict!["ContactNumber"] as? String
+            let profImage = dict!["ProfilePicURL"] as? String
+            let user = dict!["uid"] as? String
+            
+            let data = ["username":fname! + " " + lname!, "email": mail,"phoneNumber": contactNum,"userImg":profImage,"uid": user, "postID": self.post.id]
+            
+            if self.id != PostUID {
+                
+                self.ref.child("EventsParticipants/\(self.post.id)/participants/\(self.id!)").observe(.value) { (snapshotE: DataSnapshot) in
+                    
+//                    print(snapshotE.value!)
+                    
+                    let dictE = snapshotE.value as? [String: Any]
+                    let participantId = dictE?["uid"] as? String
+                    
+                    
+//                    if participantId != nil{
+                    
+                        if self.id != participantId {
+                        
+                            self.ref.child("EventsParticipants").child(self.post.id).child("participants").child(self.id!).setValue(data)
+                            
+                            let alert = UIAlertController(title: "Successfull", message: "", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                            
+                        }else{
+                            
+                            let alert = UIAlertController(title: "", message: "You have already in participants list", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                        }
+                        
+//                    }
+//                    else{
+//
+//                        let alert = UIAlertController(title: "", message: "You have already participate the event", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                        self.present(alert, animated: true)
+//                    }
+                }
+            }
+            else{
+                let alert = UIAlertController(title: "Error", message: "You have already participate the event", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
         }
+        
     }
-    
     @IBAction func btnNotParticipate(_ sender: Any) {
-//        let homeViewController =  self.storyboard?.instantiateViewController(withIdentifier: Redirect.StoryBoard.homeViewController) as? HomeViewController
-//        
-//        self.view.window?.rootViewController = homeViewController
-//        self.view.window?.makeKeyAndVisible()
+        
+        self.ref.child("EventsParticipants/\(self.post.id)/participants/\(self.id!)").observe(.value) { (snapshotE: DataSnapshot) in
+            
+            print(snapshotE.value!)
+            
+            let dictE = snapshotE.value as? [String: Any]
+            let participantId = dictE?["uid"] as? String
+            
+            
+            if participantId != nil && participantId == self.id{
+        
+               self.ref.child("EventsParticipants/\(self.post.id)/participants/").child(self.id!).removeValue()
+            }
+            
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
-
+    @IBAction func btnCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 

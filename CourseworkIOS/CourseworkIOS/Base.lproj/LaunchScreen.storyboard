@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nibms" translatesAutoresizingMaskIntoConstraints="NO" id="y6t-8g-4pe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NibmLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="y6t-8g-4pe">
                                 <rect key="frame" x="0.0" y="163" width="414" height="571"/>
                             </imageView>
                         </subviews>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nibms" width="2480" height="3508"/>
+        <image name="NibmLaunch" width="1340" height="1494"/>
     </resources>
 </document>

@@ -31,20 +31,28 @@ class Utilities {
     
     static func buttonStyles(_ button:UIButton) {
         
-        button.backgroundColor = UIColor.init(red: 42/255, green: 157/255, blue: 244/255, alpha: 1)
+        button.backgroundColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         button.layer.cornerRadius = 10.0
         button.tintColor = UIColor.white
+        
+        
+    }
+    static func buttonStylesDefault(_ button:UIButton) {
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.init(red: 99/255, green: 99/255, blue: 102/255, alpha: 1).cgColor
+        button.layer.cornerRadius = 10
+        button.tintColor = UIColor.black
         
         
     }
     static func buttonStylesCancel(_ button:UIButton) {
-        
-        button.backgroundColor = UIColor.init(red: 209/255, green: 13/255, blue: 37/255, alpha: 1)
-        button.layer.cornerRadius = 10.0
-        button.tintColor = UIColor.white
-        
-        
+       
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.init(red: 0/255, green: 122/255, blue: 255/255, alpha: 1).cgColor
+        button.layer.cornerRadius = 10
+        button.tintColor = UIColor.black
     }
+    
     func isValidEmail(_ email: String) -> Bool {
         
         let emailPred = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")

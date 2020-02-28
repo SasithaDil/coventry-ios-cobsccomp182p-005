@@ -9,12 +9,12 @@
 import Foundation
 class profile {
 //    var profilePic : String
-    var Name : String
+    var id : String
     
     
-    init( name : String){
+    init( userID : String){
 //        profImg: String,
 //        profilePic = profImg
-        Name = name
+        id = userID
     }
 }

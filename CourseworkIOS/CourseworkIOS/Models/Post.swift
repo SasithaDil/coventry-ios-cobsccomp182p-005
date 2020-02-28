@@ -17,6 +17,7 @@ class Post{
     var eventDate: String
     var eventTime: String
     var userID: String
+//    var email: String
     
     init(captionText: String, imagePath: String, userDetails: String, userPic: String, postId: String, date: String, time: String, uid: String) {
         caption = captionText
@@ -27,6 +28,8 @@ class Post{
         eventDate = date
         eventTime = time
         userID = uid
+//        email = mail
+//        , mail: String
     }
 }
 

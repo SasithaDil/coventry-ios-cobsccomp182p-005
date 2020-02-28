@@ -34,16 +34,25 @@ class postDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(btnNotParticipate(_:)))
+        imgUser.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.guesture))
         tap.numberOfTapsRequired = 1
-        btnNo.addGestureRecognizer(tap)
+        imgUser.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
         loadData()
         setupElements()
         getCount()
     }
-    @objc func btnNotParticipate(){
-        dismiss(animated: true, completion: nil)
+    @objc func guesture(){
+        
+        let vc = userDetailsViewController()
+//        let selectedPost = post.userID
+        vc.pst = post
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+       
     }
     
     
@@ -122,14 +131,13 @@ class postDetailsViewController: UIViewController {
             if self.id != PostUID {
                 
                 self.ref.child("EventsParticipants/\(self.post.id)/participants/\(self.id!)").observe(.value) { (snapshotE: DataSnapshot) in
-                    
-//                    print(snapshotE.value!)
+
                     
                     let dictE = snapshotE.value as? [String: Any]
                     let participantId = dictE?["uid"] as? String
                     
                     
-//                    if participantId != nil{
+
                     
                         if self.id != participantId {
                         
@@ -145,14 +153,7 @@ class postDetailsViewController: UIViewController {
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alert, animated: true)
                         }
-                        
-//                    }
-//                    else{
-//
-//                        let alert = UIAlertController(title: "", message: "You have already participate the event", preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                        self.present(alert, animated: true)
-//                    }
+        
                 }
             }
             else{
@@ -175,7 +176,7 @@ class postDetailsViewController: UIViewController {
             
             if participantId != nil && participantId == self.id{
         
-               self.ref.child("EventsParticipants/\(self.post.id)/participants/").child(self.id!).removeValue()
+               self.ref.child("EventsParticipants/\(self.post.id)/participants/\(self.id!)").removeValue()
             }
             
         }

@@ -81,7 +81,7 @@
                         <color key="titleColor" red="0.0" green="0.47843137254901957" blue="0.99999129772186279" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="btnNotParticipate:" destination="-1" eventType="touchUpInside" id="b5G-ZM-E1O"/>
+                        <action selector="btnNotParticipate:" destination="-1" eventType="touchUpInside" id="bJA-oZ-GjB"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="participants count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0E-Fa-8X0">
@@ -153,7 +153,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C2N-0f-nc9" secondAttribute="trailing" constant="20" id="urV-Xp-5k8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-46.376811594202906" y="0.0"/>
+            <point key="canvasLocation" x="116" y="1"/>
         </view>
     </objects>
 </document>

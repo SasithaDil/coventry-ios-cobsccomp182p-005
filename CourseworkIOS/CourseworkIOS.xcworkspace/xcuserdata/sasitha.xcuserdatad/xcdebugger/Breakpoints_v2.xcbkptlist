@@ -6,48 +6,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CourseworkIOS/userDetailsViewController.swift"
-            timestampString = "604578930.57592"
+            filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
+            timestampString = "604597610.9196171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "loadData()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CourseworkIOS/userDetailsViewController.swift"
-            timestampString = "604578930.576737"
+            filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
+            timestampString = "604597610.91994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "loadData()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CourseworkIOS/userDetailsViewController.swift"
-            timestampString = "604578930.577247"
+            filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
+            timestampString = "604597610.92006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "loadData()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

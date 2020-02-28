@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class userDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var contact: UILabel!
     @IBOutlet weak var Name: UILabel!
@@ -20,7 +20,7 @@ class userDetailsViewController: UIViewController {
     var pst:Post!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         loadData()
         setupElements()
@@ -48,8 +48,8 @@ class userDetailsViewController: UIViewController {
         
         let usrid = pst.userID
         
-         Database.database().reference().child("User").child(usrid).observe(.value) { (snapshot: DataSnapshot) in
-        
+        Database.database().reference().child("User").child(usrid).observe(.value) { (snapshot: DataSnapshot) in
+            
             let dict = snapshot.value as? [String: Any]
             let contactNum = dict!["ContactNumber"] as? String
             let mail = dict!["Email"] as? String
@@ -58,13 +58,10 @@ class userDetailsViewController: UIViewController {
             
             self.email.text = "Email : "+mail!
             
-            
-            
-            
+        }
+        
     }
-
-    }
-
+    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

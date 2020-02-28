@@ -19,6 +19,8 @@
 		61325005240545D20080D0C9 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */; };
 		613A59DD240919C800213ADE /* userDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A59DB240919C800213ADE /* userDetailsViewController.swift */; };
 		613A59DE240919C800213ADE /* userDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613A59DC240919C800213ADE /* userDetailsViewController.xib */; };
+		613A59E0240941DB00213ADE /* MyPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A59DF240941DA00213ADE /* MyPostsTableViewCell.swift */; };
+		613A59E22409604000213ADE /* MyPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613A59E12409604000213ADE /* MyPostDetailViewController.swift */; };
 		6142E1B724067780005D7516 /* postDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E1B524067780005D7516 /* postDetailsViewController.swift */; };
 		6142E1B824067780005D7516 /* postDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6142E1B624067780005D7516 /* postDetailsViewController.xib */; };
 		6142E1BA2406E44A005D7516 /* Redirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E1B92406E44A005D7516 /* Redirect.swift */; };
@@ -64,6 +66,8 @@
 		61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		613A59DB240919C800213ADE /* userDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailsViewController.swift; sourceTree = "<group>"; };
 		613A59DC240919C800213ADE /* userDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userDetailsViewController.xib; sourceTree = "<group>"; };
+		613A59DF240941DA00213ADE /* MyPostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostsTableViewCell.swift; path = ../MyPostsTableViewCell.swift; sourceTree = "<group>"; };
+		613A59E12409604000213ADE /* MyPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostDetailViewController.swift; sourceTree = "<group>"; };
 		6142E1B524067780005D7516 /* postDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetailsViewController.swift; sourceTree = "<group>"; };
 		6142E1B624067780005D7516 /* postDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = postDetailsViewController.xib; sourceTree = "<group>"; };
 		6142E1B92406E44A005D7516 /* Redirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redirect.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				61627E5C2405775700F30F37 /* MapViewController.swift */,
 				612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */,
 				610FAA3423F4013100E9EA4B /* HomeViewController.swift */,
+				613A59DF240941DA00213ADE /* MyPostsTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				6142E1B92406E44A005D7516 /* Redirect.swift */,
 				613A59DB240919C800213ADE /* userDetailsViewController.swift */,
 				613A59DC240919C800213ADE /* userDetailsViewController.xib */,
+				613A59E12409604000213ADE /* MyPostDetailViewController.swift */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				61FDC5D823F52C2C00C701C7 /* UploadViewController.swift in Sources */,
 				610A01F023FD44BE00307500 /* Post.swift in Sources */,
 				61D798B823F28667007C997D /* Extensions.swift in Sources */,
+				613A59E22409604000213ADE /* MyPostDetailViewController.swift in Sources */,
 				610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */,
 				61ECF85823EBEE4700E9992E /* CourseworkIOS.xcdatamodeld in Sources */,
 				6142E1BA2406E44A005D7516 /* Redirect.swift in Sources */,
@@ -422,6 +429,7 @@
 				61D798B623F26390007C997D /* LoginViewController.swift in Sources */,
 				613A59DD240919C800213ADE /* userDetailsViewController.swift in Sources */,
 				61ECF85023EBEE4700E9992E /* AppDelegate.swift in Sources */,
+				613A59E0240941DB00213ADE /* MyPostsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

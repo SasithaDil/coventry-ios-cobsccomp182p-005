@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
         
         Database.database().reference().child("User").child(id!).observe(.value) { (snapshot: DataSnapshot) in
             
-            print(snapshot.value!)
+           
             
             let dict = snapshot.value as? [String: Any]
             let fname = dict!["FirstName"] as? String
@@ -90,11 +90,11 @@ class ProfileViewController: UIViewController {
     
     func loadMyPost(){
         
-        Database.database().reference().child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+        Database.database().reference().child("Posts").observe(.childAdded) { (snapshotP: DataSnapshot) in
             
 //                            print(Thread.isMainThread)
             
-            if let dict = snapshot.value as? [String: Any]{
+            if let dict = snapshotP.value as? [String: Any]{
                 let captionText = dict["caption"] as! String
                 let imagePath = dict["imgURL"] as! String
                 let profPicture = dict["profPic"] as! String
@@ -132,6 +132,7 @@ extension ProfileViewController: UITableViewDataSource{
         
         myCell?.postCaption.text = myPosts[indexPath.row].caption
         
+        
         let capImg = myPosts[indexPath.row].imgURL
         
         let imageUrl = URL(string: capImg)!
@@ -145,8 +146,57 @@ extension ProfileViewController: UITableViewDataSource{
     
     
 }
-extension ProfileViewController: UITabBarDelegate{
+extension ProfileViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return tableView.frame.height/2
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did select row at : \(indexPath)")
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MyPostDetailViewController") as? MyPostDetailViewController
+        vc?.idx = myPosts[indexPath.row].id
+        present(vc!, animated: true, completion: nil)
+        
+//        let vc = MyPostDetailViewController()
+//        let selectedPost = myPosts[indexPath.row]
+//        vc.MyPostData = selectedPost
+//        vc.modalTransitionStyle = .crossDissolve
+//        vc.modalPresentationStyle = .overCurrentContext
+//        present(vc, animated: true, completion: nil)
+        
+        
+        
+        
+        
+        
+//        let psts = myPosts[indexPath.row]
+//
+//        let alertController = UIAlertController(title: "Update", message: "Are you sure do you want to update your post..?", preferredStyle: .alert)
+//
+//        let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
+//
+//            let pid = psts.id
+//
+//            let cap = alertController.textFields?[0].text
+//
+//            self.updatePost(id: pid, cap: cap!)
+//
+//        }
+//
+//        alertController.addTextField{(textField) in
+//            textField.text = psts.caption
+//        }
+//
+//        alertController.addAction(updateAction)
+//        present(alertController, animated: true, completion: nil)
+//    }
+//    func updatePost(id: String, cap: String){
+//        let pst = [
+//            "PostID": id,
+//            "caption": cap
+//        ]
+//        print(id)
+//        ref.child("Posts").child(id).setValue(pst)
+
     }
 }

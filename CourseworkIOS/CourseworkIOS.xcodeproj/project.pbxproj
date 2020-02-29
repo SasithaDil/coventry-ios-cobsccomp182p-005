@@ -67,7 +67,7 @@
 		613A59DB240919C800213ADE /* userDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailsViewController.swift; sourceTree = "<group>"; };
 		613A59DC240919C800213ADE /* userDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userDetailsViewController.xib; sourceTree = "<group>"; };
 		613A59DF240941DA00213ADE /* MyPostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostsTableViewCell.swift; path = ../MyPostsTableViewCell.swift; sourceTree = "<group>"; };
-		613A59E12409604000213ADE /* MyPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostDetailViewController.swift; sourceTree = "<group>"; };
+		613A59E12409604000213ADE /* MyPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostDetailViewController.swift; path = ../MyPostDetailViewController.swift; sourceTree = "<group>"; };
 		6142E1B524067780005D7516 /* postDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetailsViewController.swift; sourceTree = "<group>"; };
 		6142E1B624067780005D7516 /* postDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = postDetailsViewController.xib; sourceTree = "<group>"; };
 		6142E1B92406E44A005D7516 /* Redirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redirect.swift; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 				61ECF85123EBEE4700E9992E /* ViewController.swift */,
 				61FDC5D723F52C2C00C701C7 /* UploadViewController.swift */,
 				61FDC5D923F52C6B00C701C7 /* ProfileViewController.swift */,
+				613A59E12409604000213ADE /* MyPostDetailViewController.swift */,
 				611788C523F65A5000C4A441 /* EventsViewController.swift */,
 				61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */,
 				612FCA092403D92B008B8EA6 /* PreviewViewController.swift */,
@@ -201,7 +202,6 @@
 				6142E1B92406E44A005D7516 /* Redirect.swift */,
 				613A59DB240919C800213ADE /* userDetailsViewController.swift */,
 				613A59DC240919C800213ADE /* userDetailsViewController.xib */,
-				613A59E12409604000213ADE /* MyPostDetailViewController.swift */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";

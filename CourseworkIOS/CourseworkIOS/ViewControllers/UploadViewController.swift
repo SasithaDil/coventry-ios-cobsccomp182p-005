@@ -100,7 +100,6 @@ class UploadViewController: UIViewController {
                 }
                 
                 
-                
                 let ref = Database.database().reference()
                 let postRef = ref.child("Posts")
                 let newPostId = postRef.childByAutoId().key
@@ -136,13 +135,14 @@ class UploadViewController: UIViewController {
                                     "postDate": ServerValue.timestamp(),
                                     "profPic": profImage as Any] as [String : Any]
                         
-                        ref.child("Posts").childByAutoId().setValue(data)
+                        ref.child("Posts").child(newPostId!).setValue(data)
                         
                         let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true)
                         
                         self.performSegue(withIdentifier: "HomeVC", sender: nil)
+
                         self.caption.text = ""
                         self.photo.image = UIImage(named: "icons8-pictures-folder-100")
                         self.tabBarController?.selectedIndex = 0

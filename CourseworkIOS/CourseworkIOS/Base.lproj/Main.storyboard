@@ -317,11 +317,11 @@
                                     <action selector="Share:" destination="gq2-eK-IHs" eventType="touchUpInside" id="iBA-vB-Rdw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-ak-4z9">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date to tap" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-ak-4z9">
                                 <rect key="frame" x="20" y="258" width="184" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTb-2d-dJW">
@@ -330,9 +330,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="timeChanged:" destination="gq2-eK-IHs" eventType="editingDidEnd" id="hbH-tN-fVt"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kY-Rw-sFs">
                                 <rect key="frame" x="348" y="670" width="33" height="33"/>
@@ -352,9 +349,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sk-RU-GM3">
-                                <rect key="frame" x="158" y="457" width="46" height="30"/>
+                                <rect key="frame" x="14" y="345" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Location"/>
                                 <connections>
                                     <segue destination="yzZ-M1-7d3" kind="show" id="g3J-MG-Jo3"/>
                                 </connections>
@@ -685,6 +682,9 @@
                                 <rect key="frame" x="20" y="771" width="374" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonUpdate:" destination="VZg-T9-pez" eventType="touchUpInside" id="fhD-1n-xWu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -695,6 +695,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FXy-qf-F4X"/>
                     </view>
+                    <connections>
+                        <outlet property="Date" destination="D39-Fn-93z" id="CxG-vY-hT9"/>
+                        <outlet property="Time" destination="Cnz-xL-IyF" id="leb-en-2Q8"/>
+                        <outlet property="Update" destination="pZH-a9-D0z" id="CDb-Ut-emF"/>
+                        <outlet property="postCaption" destination="5Kj-JY-r2T" id="CiW-dC-p8B"/>
+                        <outlet property="postImage" destination="xoa-nm-7Mh" id="y0R-Vs-seh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHB-Aa-2sU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

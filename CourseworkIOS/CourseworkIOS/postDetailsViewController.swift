@@ -35,17 +35,14 @@ class postDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//         Comments.isUserInteractionEnabled = true
+
         imgUser.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.guesture))
         tap.numberOfTapsRequired = 1
-//        imgUser.addGestureRecognizer(tap)
+        imgUser.addGestureRecognizer(tap)
         
         
-        Comments.isUserInteractionEnabled = true
-        let tapComment = UITapGestureRecognizer(target: self, action: #selector(self.guestureComments))
-        tapComment.numberOfTapsRequired = 1
-        Comments.addGestureRecognizer(tapComment)
+       
         // Do any additional setup after loading the view.
         loadData()
         setupElements()
@@ -62,17 +59,7 @@ class postDetailsViewController: UIViewController {
 //        dismiss(animated: true, completion: nil)
        
     }
-    @objc func guestureComments(){
-        
-        let vc = userDetailsViewController()
-        //        let selectedPost = post.userID
-        vc.pst = post
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
-        //        dismiss(animated: true, completion: nil)
-        
-    }
+ 
     
     
     func setupElements(){

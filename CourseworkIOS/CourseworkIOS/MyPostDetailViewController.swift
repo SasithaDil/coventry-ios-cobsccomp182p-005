@@ -16,9 +16,15 @@ import ImagePicker
 class MyPostDetailViewController: UIViewController {
     
     
+    @IBOutlet weak var Cancel: UIButton!
+    @IBOutlet weak var Delete: UIButton!
+    @IBOutlet weak var Update: UIButton!
+    //    @IBOutlet weak var Delete: UIButton!
+//    @IBOutlet weak var Update: UIButton!
+    //    @IBOutlet weak var Delete: UIButton!
     @IBOutlet weak var updateTime: UITextField!
     @IBOutlet weak var updateDate: UITextField!
-    @IBOutlet weak var Update: UIButton!
+    //    @IBOutlet weak var Update: UIButton!
     //    @IBOutlet weak var Time: UILabel!
     //    @IBOutlet weak var Date: UILabel!
     @IBOutlet weak var postCaption: UITextView!
@@ -28,15 +34,22 @@ class MyPostDetailViewController: UIViewController {
     
     var ref = Database.database().reference()
     var myPosts: Post!
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadPostData()
         // Do any additional setup after loading the view.
+        setupElements()
+        
     }
     
+    func setupElements(){
+        Utilities.buttonStyles(Update)
+        Utilities.buttonStylesCancel(Delete)
+        Utilities.buttonStylesDefault(Cancel)
+    }
     func loadPostData(){
         
         
@@ -72,19 +85,21 @@ class MyPostDetailViewController: UIViewController {
     
     @IBAction func buttonUpdate(_ sender: Any) {
         
-                    let data = [
-//                        "imgURL": pic as Any,
-                        "caption": self.postCaption.text!,
-                        "eventDate": self.updateDate.text!,
-                        "startingTime": self.updateTime.text!,
-                        "postDate": ServerValue.timestamp()] as [String : Any]
-                    
-                    self.ref.child("Posts").child(self.idx).updateChildValues(data)
+        let data = [
+            //                        "imgURL": pic as Any,
+            "caption": self.postCaption.text!,
+            "eventDate": self.updateDate.text!,
+            "startingTime": self.updateTime.text!,
+            "postDate": ServerValue.timestamp()] as [String : Any]
+        
+        self.ref.child("Posts").child(self.idx).updateChildValues(data)
         
         let alert = UIAlertController(title: "Updated Successfuly..", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
-
         
+        self.dismiss(animated: true, completion: nil)
+       
     }
+    
 }

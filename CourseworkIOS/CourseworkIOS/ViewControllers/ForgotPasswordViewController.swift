@@ -23,7 +23,7 @@ class ForgotPasswordViewController: UIViewController {
         setupElements()
     }
     func setupElements(){
-        Utilities.textFieldStyles(txtEmail)
+//        Utilities.textFieldStyles(txtEmail)
         Utilities.buttonStylesCancel(btnCancel)
         Utilities.buttonStyles(btnReset)
 //        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)

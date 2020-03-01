@@ -37,14 +37,9 @@ class RegisterViewController: UIViewController {
     func setUpElements(){
         lblError.alpha = 0
         
-        Utilities.textFieldStyles(txtFname)
-        Utilities.textFieldStyles(txtLname)
-        Utilities.textFieldStyles(txtEmail)
-        Utilities.textFieldStyles(txtContact)
-        Utilities.textFieldStyles(txtPassword)
-        Utilities.textFieldStyles(txtConfirmPassword)
+
         Utilities.buttonStyles(btnRegister)
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
         profileImage.layer.cornerRadius = profileImage.frame.size.width/2
         profileImage.clipsToBounds = true

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     func setupUicomponents(){
         Utilities.buttonStyles(btnLogin)
         Utilities.buttonStyles(btnSignUp)
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
 //        Utilities.styleTextField(textfield)
     }
 

@@ -31,7 +31,7 @@ class userDetailsViewController: UIViewController {
         imgUser.layer.borderColor = UIColor.blue.cgColor
         imgUser.layer.borderWidth = 5
         
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
     func loadData(){
         

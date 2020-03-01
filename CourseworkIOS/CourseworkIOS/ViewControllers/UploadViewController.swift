@@ -43,10 +43,10 @@ class UploadViewController: UIViewController {
         view.addGestureRecognizer(tapGuesture)
     }
     func setupElements(){
-        Utilities.textFieldStyles(txtDate)
-        Utilities.textFieldStyles(txtTime)
+//        Utilities.textFieldStyles(txtDate)
+//        Utilities.textFieldStyles(txtTime)
         Utilities.buttonStyles(btnShare)
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
@@ -106,7 +106,7 @@ class UploadViewController: UIViewController {
                 let user = Auth.auth().currentUser
                  ref.child("User").child(user!.uid).observe(.value) { (snapshot: DataSnapshot) in
                     
-                    print(snapshot.value!)
+//                    print(snapshot.value!)
                     
                     let dict = snapshot.value as? [String: Any]
                     let fname = dict!["FirstName"] as? String
@@ -135,13 +135,16 @@ class UploadViewController: UIViewController {
                                     "postDate": ServerValue.timestamp(),
                                     "profPic": profImage as Any] as [String : Any]
                         
-                        ref.child("Posts").child(newPostId!).setValue(data)
+                        postRef.child(newPostId!).setValue(data)
                         
                         let alert = UIAlertController(title: "Successful..", message: "", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true)
                         
-                        self.performSegue(withIdentifier: "HomeVC", sender: nil)
+//                        let vc = HomeViewController()
+                    
+                       
+//                        self.performSegue(withIdentifier: "HomeVC", sender: nil)
 
                         self.caption.text = ""
                         self.photo.image = UIImage(named: "icons8-pictures-folder-100")
@@ -153,7 +156,7 @@ class UploadViewController: UIViewController {
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                             self.present(alert, animated: true)
                         }
-                        
+//                         self.present(vc, animated: true, completion: nil)
                     })
                     
                 }

@@ -15,6 +15,7 @@ import FirebaseDatabase
 class postDetailsViewController: UIViewController {
     
     
+    @IBOutlet weak var Comments: UIImageView!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var count: UILabel!
     @IBOutlet weak var btnNo: UIButton!
@@ -34,10 +35,17 @@ class postDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//         Comments.isUserInteractionEnabled = true
         imgUser.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.guesture))
         tap.numberOfTapsRequired = 1
-        imgUser.addGestureRecognizer(tap)
+//        imgUser.addGestureRecognizer(tap)
+        
+        
+        Comments.isUserInteractionEnabled = true
+        let tapComment = UITapGestureRecognizer(target: self, action: #selector(self.guestureComments))
+        tapComment.numberOfTapsRequired = 1
+        Comments.addGestureRecognizer(tapComment)
         // Do any additional setup after loading the view.
         loadData()
         setupElements()
@@ -54,13 +62,24 @@ class postDetailsViewController: UIViewController {
 //        dismiss(animated: true, completion: nil)
        
     }
+    @objc func guestureComments(){
+        
+        let vc = userDetailsViewController()
+        //        let selectedPost = post.userID
+        vc.pst = post
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
+        //        dismiss(animated: true, completion: nil)
+        
+    }
     
     
     func setupElements(){
         Utilities.buttonStyles(btnYes)
         Utilities.buttonStylesCancel(btnNo)
         
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
         imgUser.layer.cornerRadius = imgUser.frame.size.width/2
         imgUser.clipsToBounds = true

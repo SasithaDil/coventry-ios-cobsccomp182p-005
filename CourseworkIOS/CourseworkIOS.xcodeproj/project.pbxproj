@@ -26,6 +26,8 @@
 		6142E1BA2406E44A005D7516 /* Redirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6142E1B92406E44A005D7516 /* Redirect.swift */; };
 		61627E5D2405775700F30F37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61627E5C2405775700F30F37 /* MapViewController.swift */; };
 		617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EFD1A23EC20CF0063C2D4 /* Utilities.swift */; };
+		61BBC87B240BD0E500F59139 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BBC879240BD0E500F59139 /* CommentsViewController.swift */; };
+		61BBC87C240BD0E500F59139 /* CommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BBC87A240BD0E500F59139 /* CommentsViewController.xib */; };
 		61CA752523FFC904002AC948 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA752423FFC904002AC948 /* profile.swift */; };
 		61D798B623F26390007C997D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B523F26390007C997D /* LoginViewController.swift */; };
 		61D798B823F28667007C997D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D798B723F28666007C997D /* Extensions.swift */; };
@@ -65,7 +67,7 @@
 		612FCA0B2403D9C6008B8EA6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		61325004240545D20080D0C9 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		613A59DB240919C800213ADE /* userDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailsViewController.swift; sourceTree = "<group>"; };
-		613A59DC240919C800213ADE /* userDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userDetailsViewController.xib; sourceTree = "<group>"; };
+		613A59DC240919C800213ADE /* userDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = userDetailsViewController.xib; path = ../userDetailsViewController.xib; sourceTree = "<group>"; };
 		613A59DF240941DA00213ADE /* MyPostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostsTableViewCell.swift; path = ../MyPostsTableViewCell.swift; sourceTree = "<group>"; };
 		613A59E12409604000213ADE /* MyPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostDetailViewController.swift; path = ../MyPostDetailViewController.swift; sourceTree = "<group>"; };
 		6142E1B524067780005D7516 /* postDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDetailsViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		6142E1B92406E44A005D7516 /* Redirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redirect.swift; sourceTree = "<group>"; };
 		61627E5C2405775700F30F37 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		617EFD1A23EC20CF0063C2D4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		61BBC879240BD0E500F59139 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		61BBC87A240BD0E500F59139 /* CommentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsViewController.xib; sourceTree = "<group>"; };
 		61CA752423FFC904002AC948 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		61D798B523F26390007C997D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		61D798B723F28666007C997D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				612FCA062403951C008B8EA6 /* CustomTableViewCell.xib */,
 				6142E1B624067780005D7516 /* postDetailsViewController.xib */,
+				613A59DC240919C800213ADE /* userDetailsViewController.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -201,7 +206,8 @@
 				6142E1B524067780005D7516 /* postDetailsViewController.swift */,
 				6142E1B92406E44A005D7516 /* Redirect.swift */,
 				613A59DB240919C800213ADE /* userDetailsViewController.swift */,
-				613A59DC240919C800213ADE /* userDetailsViewController.xib */,
+				61BBC879240BD0E500F59139 /* CommentsViewController.swift */,
+				61BBC87A240BD0E500F59139 /* CommentsViewController.xib */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61BBC87C240BD0E500F59139 /* CommentsViewController.xib in Resources */,
 				613A59DE240919C800213ADE /* userDetailsViewController.xib in Resources */,
 				61ECF85D23EBEE4800E9992E /* LaunchScreen.storyboard in Resources */,
 				6142E1B824067780005D7516 /* postDetailsViewController.xib in Resources */,
@@ -427,6 +434,7 @@
 				617EFD1B23EC20CF0063C2D4 /* Utilities.swift in Sources */,
 				612FCA0C2403D9C6008B8EA6 /* CameraViewController.swift in Sources */,
 				61D798B623F26390007C997D /* LoginViewController.swift in Sources */,
+				61BBC87B240BD0E500F59139 /* CommentsViewController.swift in Sources */,
 				613A59DD240919C800213ADE /* userDetailsViewController.swift in Sources */,
 				61ECF85023EBEE4700E9992E /* AppDelegate.swift in Sources */,
 				613A59E0240941DB00213ADE /* MyPostsTableViewCell.swift in Sources */,

@@ -16,7 +16,7 @@ class EventsViewController: UIViewController {
         setupElements()
     }
     func setupElements(){
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
 
    

@@ -26,7 +26,7 @@ class ForgotPasswordViewController: UIViewController {
         Utilities.textFieldStyles(txtEmail)
         Utilities.buttonStylesCancel(btnCancel)
         Utilities.buttonStyles(btnReset)
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         lblError.alpha = 0
     }
     

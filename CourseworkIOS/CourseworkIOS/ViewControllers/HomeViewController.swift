@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
     func setupElements(){
         
         tableView.layer.backgroundColor = UIColor.clear.cgColor
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
         
     }

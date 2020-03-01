@@ -25,9 +25,9 @@ class LoginViewController: UIViewController {
         lblError.alpha = 0
         
         Utilities.buttonStyles(btnLogin)
-        Utilities.textFieldStyles(txtEmail)
-        Utilities.textFieldStyles(txtPassword)
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        Utilities.textFieldStyles(txtEmail)
+//        Utilities.textFieldStyles(txtPassword)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

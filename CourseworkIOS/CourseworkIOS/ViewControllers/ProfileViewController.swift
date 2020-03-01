@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
         profPic.clipsToBounds = true
         profPic.layer.borderColor = UIColor.blue.cgColor
         profPic.layer.borderWidth = 5
-        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
+//        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
         
     }
@@ -157,46 +157,6 @@ extension ProfileViewController: UITableViewDelegate{
         vc?.idx = myPosts[indexPath.row].id
         present(vc!, animated: true, completion: nil)
         
-//        let vc = MyPostDetailViewController()
-//        let selectedPost = myPosts[indexPath.row]
-//        vc.MyPostData = selectedPost
-//        vc.modalTransitionStyle = .crossDissolve
-//        vc.modalPresentationStyle = .overCurrentContext
-//        present(vc, animated: true, completion: nil)
-        
-        
-        
-        
-        
-        
-//        let psts = myPosts[indexPath.row]
-//
-//        let alertController = UIAlertController(title: "Update", message: "Are you sure do you want to update your post..?", preferredStyle: .alert)
-//
-//        let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
-//
-//            let pid = psts.id
-//
-//            let cap = alertController.textFields?[0].text
-//
-//            self.updatePost(id: pid, cap: cap!)
-//
-//        }
-//
-//        alertController.addTextField{(textField) in
-//            textField.text = psts.caption
-//        }
-//
-//        alertController.addAction(updateAction)
-//        present(alertController, animated: true, completion: nil)
-//    }
-//    func updatePost(id: String, cap: String){
-//        let pst = [
-//            "PostID": id,
-//            "caption": cap
-//        ]
-//        print(id)
-//        ref.child("Posts").child(id).setValue(pst)
 
     }
 }

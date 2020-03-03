@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-
+import LocalAuthentication
 
 class ProfileViewController: UIViewController {
     
@@ -29,12 +29,14 @@ class ProfileViewController: UIViewController {
     var ref: DatabaseReference!
     var id = Auth.auth().currentUser?.uid
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupElements()
         loadImg()
         loadMyPost()
+        CheckFaceID()
         
     }
     func setupElements(){
@@ -43,9 +45,46 @@ class ProfileViewController: UIViewController {
         profPic.layer.borderColor = UIColor.blue.cgColor
         profPic.layer.borderWidth = 5
 //        view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        
+       
         
     }
+    
+    @objc fileprivate func CheckFaceID(){
+        
+        let context = LAContext()
+        
+        var error : NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
+            
+            let reason = "identify your self"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){
+                
+                [weak self] success, authenticationError in
+                
+                DispatchQueue.main.async {
+                    if success{
+//                        self!.dismiss(animated: true, completion:nil)
+                    }else{
+                        
+                        let ac = UIAlertController(title: "Authentication failed", message: "You could Not be verified, Please Try again", preferredStyle: .alert)
+                        
+                        ac.addAction(UIAlertAction(title: "ok", style: .default))
+                        self?.present(ac , animated: true)
+                        
+                    }
+                }
+            }
+        }else{
+            
+            let ac = UIAlertController(title: "Biometry UNavailable", message: "not configures", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "ok", style: .default))
+            present(ac , animated: true)
+        }
+        
+    }
+   
     
     @IBAction func Logout(_ sender: Any) {
         

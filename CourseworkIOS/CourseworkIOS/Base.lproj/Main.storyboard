@@ -717,6 +717,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
+                                            <action selector="Cancel:" destination="VZg-T9-pez" eventType="touchUpInside" id="CU1-6z-gfF"/>
                                             <action selector="buttonUpdate:" destination="VZg-T9-pez" eventType="touchUpInside" id="fhD-1n-xWu"/>
                                         </connections>
                                     </button>
@@ -728,6 +729,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Delete"/>
                                         <connections>
+                                            <action selector="DeletePost:" destination="VZg-T9-pez" eventType="touchUpInside" id="uUw-vL-4UE"/>
                                             <action selector="buttonUpdate:" destination="VZg-T9-pez" eventType="touchUpInside" id="dJ9-iL-Pql"/>
                                         </connections>
                                     </button>
@@ -855,6 +857,16 @@
                         <viewLayoutGuide key="safeArea" id="eNg-l2-Lzp"/>
                     </view>
                     <navigationItem key="navigationItem" id="8Mn-hl-55w">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="gVP-BD-OyM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Acv-PP-sVs">
+                                <rect key="frame" x="20" y="6" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icons8-back-96"/>
+                            </button>
+                            <connections>
+                                <action selector="Back:" destination="8Bx-7Q-2Zt" id="N17-Vr-iiA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Cq2-dz-Jqd">
                             <connections>
                                 <action selector="btnSearch:" destination="8Bx-7Q-2Zt" id="my4-Dp-9w1"/>
@@ -1099,6 +1111,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-back-96" width="32" height="32"/>
         <image name="icons8-event-accepted-tentatively-100" width="33" height="33"/>
         <image name="icons8-home-page-100" width="33" height="33"/>
         <image name="icons8-name-100" width="33" height="33"/>
@@ -1112,6 +1125,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zxy-5B-8uc"/>
         <segue reference="Lks-MC-xuS"/>
-        <segue reference="CPP-IV-WXc"/>
+        <segue reference="bEb-07-43k"/>
     </inferredMetricsTieBreakers>
 </document>

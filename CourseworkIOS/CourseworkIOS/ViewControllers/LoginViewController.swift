@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import LocalAuthentication
 
 class LoginViewController: UIViewController {
 
@@ -19,17 +20,21 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         setupElements()
+       
     }
     
     func setupElements(){
         lblError.alpha = 0
         
         Utilities.buttonStyles(btnLogin)
+        
 
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+   
     
     @IBAction func LOgin(_ sender: Any) {
         view.endEditing(true)
@@ -42,6 +47,7 @@ class LoginViewController: UIViewController {
                 self.lblError.alpha  = 1
             }
             else{
+                
                 self.performSegue(withIdentifier: "HomeVC", sender: nil)
             }
         }

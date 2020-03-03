@@ -156,6 +156,26 @@
 			path = CourseworkIOSUITests;
 			sourceTree = "<group>";
 		};
+		610C6741240E304900680098 /* xibControllers */ = {
+			isa = PBXGroup;
+			children = (
+				613A59DB240919C800213ADE /* userDetailsViewController.swift */,
+				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
+				6142E1B524067780005D7516 /* postDetailsViewController.swift */,
+			);
+			path = xibControllers;
+			sourceTree = "<group>";
+		};
+		610C6742240E316C00680098 /* Junk files */ = {
+			isa = PBXGroup;
+			children = (
+				6142E1B92406E44A005D7516 /* Redirect.swift */,
+				61BBC879240BD0E500F59139 /* CommentsViewController.swift */,
+				61BBC87A240BD0E500F59139 /* CommentsViewController.xib */,
+			);
+			path = "Junk files";
+			sourceTree = "<group>";
+		};
 		610FAA3623F4119600E9EA4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,8 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				61ECF84E23EBEE4700E9992E /* CourseworkIOS */,
-				61ECF86623EBEE4800E9992E /* CourseworkIOSTests */,
 				610C6738240E1BF300680098 /* CourseworkIOSUITests */,
+				61ECF86623EBEE4800E9992E /* CourseworkIOSTests */,
 				61ECF84D23EBEE4700E9992E /* Products */,
 				6449BBBCBA74FF0ABDC8E92B /* Pods */,
 				EF5BF14D0D6F4A25DA221E16 /* Frameworks */,
@@ -223,6 +243,7 @@
 				61ECF84F23EBEE4700E9992E /* AppDelegate.swift */,
 				617EFD1923EC20260063C2D4 /* Designs */,
 				610A01EE23FD444B00307500 /* Models */,
+				610C6741240E304900680098 /* xibControllers */,
 				6149D6A92408389B00DE23FC /* xib */,
 				610FAA3623F4119600E9EA4B /* ViewControllers */,
 				61ECF85323EBEE4700E9992E /* Main.storyboard */,
@@ -231,12 +252,7 @@
 				61ECF85E23EBEE4800E9992E /* Info.plist */,
 				61ECF85623EBEE4700E9992E /* CourseworkIOS.xcdatamodeld */,
 				610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */,
-				612FCA052403951C008B8EA6 /* CustomTableViewCell.swift */,
-				6142E1B524067780005D7516 /* postDetailsViewController.swift */,
-				6142E1B92406E44A005D7516 /* Redirect.swift */,
-				613A59DB240919C800213ADE /* userDetailsViewController.swift */,
-				61BBC879240BD0E500F59139 /* CommentsViewController.swift */,
-				61BBC87A240BD0E500F59139 /* CommentsViewController.xib */,
+				610C6742240E316C00680098 /* Junk files */,
 			);
 			path = CourseworkIOS;
 			sourceTree = "<group>";

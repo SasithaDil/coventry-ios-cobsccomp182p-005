@@ -102,4 +102,22 @@ class MyPostDetailViewController: UIViewController {
        
     }
     
+    @IBAction func DeletePost(_ sender: Any) {
+        
+        
+//        print(idx)
+//        
+//        self.ref.child("Posts").child(idx).removeValue()
+//        
+//        let alert = UIAlertController(title: "Deleted Successfuly..", message: "", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        self.present(alert, animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func Cancel(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -172,7 +172,7 @@ class postDetailsViewController: UIViewController {
     }
     @IBAction func btnNotParticipate(_ sender: Any) {
         
-        self.ref.child("EventsParticipants/\(self.post.id)/participants/\(self.id!)").observe(.value) { (snapshotE: DataSnapshot) in
+        self.ref.child("EventsParticipants/\(self.post.id)/participants").observe(.value) { (snapshotE: DataSnapshot) in
             
             print(snapshotE.value!)
             

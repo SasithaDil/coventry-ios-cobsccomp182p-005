@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		610A01F023FD44BE00307500 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610A01EF23FD44BE00307500 /* Post.swift */; };
+		610C673A240E1BF300680098 /* CourseworkIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610C6739240E1BF300680098 /* CourseworkIOSUITests.swift */; };
 		610FAA2D23F3D9D400E9EA4B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */; };
 		610FAA3123F3EC1100E9EA4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */; };
 		610FAA3523F4013100E9EA4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610FAA3423F4013100E9EA4B /* HomeViewController.swift */; };
@@ -45,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		610C673C240E1BF300680098 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61ECF84423EBEE4700E9992E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61ECF84B23EBEE4700E9992E;
+			remoteInfo = CourseworkIOS;
+		};
 		61ECF86423EBEE4800E9992E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 61ECF84423EBEE4700E9992E /* Project object */;
@@ -57,6 +65,9 @@
 /* Begin PBXFileReference section */
 		3928E29A4588283A3E1BE120 /* Pods-CourseworkIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseworkIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CourseworkIOSTests/Pods-CourseworkIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		610A01EF23FD44BE00307500 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		610C6737240E1BF300680098 /* CourseworkIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseworkIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		610C6739240E1BF300680098 /* CourseworkIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseworkIOSUITests.swift; sourceTree = "<group>"; };
+		610C673B240E1BF300680098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610FAA2C23F3D9D400E9EA4B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		610FAA3023F3EC1100E9EA4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		610FAA3423F4013100E9EA4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		610C6734240E1BF300680098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61ECF84923EBEE4700E9992E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +145,15 @@
 				61CA752423FFC904002AC948 /* profile.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		610C6738240E1BF300680098 /* CourseworkIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				610C6739240E1BF300680098 /* CourseworkIOSUITests.swift */,
+				610C673B240E1BF300680098 /* Info.plist */,
+			);
+			path = CourseworkIOSUITests;
 			sourceTree = "<group>";
 		};
 		610FAA3623F4119600E9EA4B /* ViewControllers */ = {
@@ -173,6 +200,7 @@
 			children = (
 				61ECF84E23EBEE4700E9992E /* CourseworkIOS */,
 				61ECF86623EBEE4800E9992E /* CourseworkIOSTests */,
+				610C6738240E1BF300680098 /* CourseworkIOSUITests */,
 				61ECF84D23EBEE4700E9992E /* Products */,
 				6449BBBCBA74FF0ABDC8E92B /* Pods */,
 				EF5BF14D0D6F4A25DA221E16 /* Frameworks */,
@@ -184,6 +212,7 @@
 			children = (
 				61ECF84C23EBEE4700E9992E /* CourseworkIOS.app */,
 				61ECF86323EBEE4800E9992E /* CourseworkIOSTests.xctest */,
+				610C6737240E1BF300680098 /* CourseworkIOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +273,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		610C6736240E1BF300680098 /* CourseworkIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 610C6740240E1BF300680098 /* Build configuration list for PBXNativeTarget "CourseworkIOSUITests" */;
+			buildPhases = (
+				610C6733240E1BF300680098 /* Sources */,
+				610C6734240E1BF300680098 /* Frameworks */,
+				610C6735240E1BF300680098 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				610C673D240E1BF300680098 /* PBXTargetDependency */,
+			);
+			name = CourseworkIOSUITests;
+			productName = CourseworkIOSUITests;
+			productReference = 610C6737240E1BF300680098 /* CourseworkIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		61ECF84B23EBEE4700E9992E /* CourseworkIOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61ECF86C23EBEE4800E9992E /* Build configuration list for PBXNativeTarget "CourseworkIOS" */;
@@ -292,6 +339,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Sasitha Dilshan";
 				TargetAttributes = {
+					610C6736240E1BF300680098 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 61ECF84B23EBEE4700E9992E;
+					};
 					61ECF84B23EBEE4700E9992E = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -316,11 +367,19 @@
 			targets = (
 				61ECF84B23EBEE4700E9992E /* CourseworkIOS */,
 				61ECF86223EBEE4800E9992E /* CourseworkIOSTests */,
+				610C6736240E1BF300680098 /* CourseworkIOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		610C6735240E1BF300680098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61ECF84A23EBEE4700E9992E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,6 +469,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		610C6733240E1BF300680098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				610C673A240E1BF300680098 /* CourseworkIOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61ECF84823EBEE4700E9992E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +519,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		610C673D240E1BF300680098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61ECF84B23EBEE4700E9992E /* CourseworkIOS */;
+			targetProxy = 610C673C240E1BF300680098 /* PBXContainerItemProxy */;
+		};
 		61ECF86523EBEE4800E9992E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 61ECF84B23EBEE4700E9992E /* CourseworkIOS */;
@@ -479,6 +551,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		610C673E240E1BF300680098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CourseworkIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sasithad.CourseworkIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CourseworkIOS;
+			};
+			name = Debug;
+		};
+		610C673F240E1BF300680098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CourseworkIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sasithad.CourseworkIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CourseworkIOS;
+			};
+			name = Release;
+		};
 		61ECF86A23EBEE4800E9992E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -676,6 +784,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		610C6740240E1BF300680098 /* Build configuration list for PBXNativeTarget "CourseworkIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				610C673E240E1BF300680098 /* Debug */,
+				610C673F240E1BF300680098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		61ECF84723EBEE4700E9992E /* Build configuration list for PBXProject "CourseworkIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

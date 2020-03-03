@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604917463.750759"
+            timestampString = "604917783.36341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604917463.7509"
+            timestampString = "604917783.36422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604917463.750988"
+            timestampString = "604917783.3646179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/RegisterViewController.swift"
-            timestampString = "604917463.751155"
+            timestampString = "604917783.365168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"

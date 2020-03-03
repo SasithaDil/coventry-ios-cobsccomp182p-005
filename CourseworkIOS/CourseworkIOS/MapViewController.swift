@@ -73,7 +73,7 @@ class MapViewController: UIViewController{
     @IBAction func Back(_ sender: Any) {
         
         let vc = UploadViewController()
-        present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

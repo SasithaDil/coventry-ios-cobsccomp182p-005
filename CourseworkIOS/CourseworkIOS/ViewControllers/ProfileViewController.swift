@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
         setupElements()
         loadImg()
         loadMyPost()
-        CheckFaceID()
+        
         
     }
     func setupElements(){
@@ -49,43 +49,7 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @objc fileprivate func CheckFaceID(){
-        
-        let context = LAContext()
-        
-        var error : NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
-            
-            let reason = "identify your self"
-            
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){
-                
-                [weak self] success, authenticationError in
-                
-                DispatchQueue.main.async {
-                    if success{
-//                        self!.dismiss(animated: true, completion:nil)
-                    }else{
-                        
-                        let ac = UIAlertController(title: "Authentication failed", message: "You could Not be verified, Please Try again", preferredStyle: .alert)
-                        
-                        ac.addAction(UIAlertAction(title: "ok", style: .default))
-                        self?.present(ac , animated: true)
-                        
-                    }
-                }
-            }
-        }else{
-            
-            let ac = UIAlertController(title: "Biometry UNavailable", message: "not configures", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "ok", style: .default))
-            present(ac , animated: true)
-        }
-        
-    }
-   
-    
+
     @IBAction func Logout(_ sender: Any) {
         
         try! Auth.auth().signOut()
@@ -98,6 +62,8 @@ class ProfileViewController: UIViewController {
     
     
     func loadImg(){
+        
+        
         
         Database.database().reference().child("User").child(id!).observe(.value) { (snapshot: DataSnapshot) in
             

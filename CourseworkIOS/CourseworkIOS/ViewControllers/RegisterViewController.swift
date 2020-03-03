@@ -85,21 +85,17 @@ class RegisterViewController: UIViewController {
             let contact = txtContact.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = txtPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-           
-            
-//            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-            
+          
             Auth.auth().createUser(withEmail: email, password: password) { ( User, err) in
                 
                 if err != nil{
                     self.showError("Error creating user.")
                 }
                 else{
-                    //                    let db = Firestore.firestore()
-                    
-                    let storageRef = Storage.storage().reference(forURL: "gs://coursework-ios-730cb.appspot.com/profilePics").child("profile_image").child(User!.user.uid).child("\(NSUUID().uuidString).jpg")
+                    let storageRef = Storage.storage().reference(forURL:"gs://coursework-ios-730cb.appspot.com/profilePics").child("profile_image").child(User!.user.uid).child("\(NSUUID().uuidString).jpg")
                     if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
                         storageRef.putData(imageData, metadata: nil, completion: { (metadata, error ) in
+                            
                             if error != nil{
                                 self.showError("Error in uploading profile photo.")
                             }

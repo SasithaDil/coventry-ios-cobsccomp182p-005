@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604915630.39641"
+            timestampString = "604917463.750759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604915630.396578"
+            timestampString = "604917463.7509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseworkIOS/ViewControllers/ProfileViewController.swift"
-            timestampString = "604915630.396736"
+            timestampString = "604917463.750988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "loadMyPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -96,6 +96,22 @@
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "loadPostData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseworkIOS/ViewControllers/RegisterViewController.swift"
+            timestampString = "604917463.751155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "Register(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -108,10 +108,13 @@ class RegisterViewController: UIViewController {
                                     print(error!.localizedDescription)
                                     return
                                 }
+                                else if url == nil{
+                                    print(error!.localizedDescription)
+                                    return
+                                }
                                 let pic = url?.absoluteString
                                 
-                                
-                                
+                            
                                 let userdata = ["FirstName" : firstName, "LastName": lastName,"Email": email,"ContactNumber": contact, "ProfilePicURL": pic, "uid": User?.user.uid ]
                                 
                                 ref.child("User").child((User?.user.uid)!).setValue(userdata)
